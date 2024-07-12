@@ -1,0 +1,15 @@
+{
+	"Damage": {
+		"Interceptor": ["Razor", "Falcon", "Blitz", "Viper", "Scorpion", "Specter", "Wraith", "Striker"],
+		"Bomber": ["Juggernaut", "Havoc", "Devastator", "Annihilator", "Maelstrom", "Warbringer", "Titan", "Demolisher"],
+		"Sniper": ["Phantom", "Hawkeye", "Longshot", "Eagle Eye", "Marksman", "Shadow", "Reaper", "Sharpshooter"],
+		"Scout": ["Guardian", "Aegis", "Protector", "Beacon", "Sentinel", "Medic", "Savior", "Lifeline"]
+	},
+	"Support": {
+		"Support": ["Guardian", "Aegis", "Protector", "Beacon", "Sentinel", "Medic", "Savior", "Lifeline"],
+		"Engineer": ["Constructor", "Machinist", "Builder", "Tinker", "Artisan", "Smith", "Fabricator", "Architect"]
+	},
+	"Tank": {
+		"Tank": ["Bulwark", "Fortress", "Colossus", "Goliath", "Defender", "Ironclad", "Titan", "Vanguard"]
+	}
+}
