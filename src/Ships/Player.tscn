@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://b1sikvb6ehidu"]
 
-[ext_resource type="Script" path="res://src/Components/CollisionComponent.gd" id="1_8non3"]
+[ext_resource type="Script" path="res://src/Scripts/Components/CollisionComponent.gd" id="1_8non3"]
 [ext_resource type="Script" path="res://src/Scripts/Player.gd" id="1_f1yfe"]
 
 [sub_resource type="Gradient" id="Gradient_2sa08"]
