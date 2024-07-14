@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://dyd7oiu6uf3g6" path="res://src/sprites/Untitled126_20240710013553.png" id="1_dwrh0"]
 [ext_resource type="Texture2D" uid="uid://dej1bsng381j2" path="res://src/sprites/Untitled125.png" id="2_0mh7g"]
 [ext_resource type="Script" path="res://src/scripts/PlayerMovement.gd" id="3_goarn"]
-[ext_resource type="Texture2D" uid="uid://c2ryrdhokiexn" path="res://src/sprites/GoogledSpaceShip.png" id="3_kdmp6"]
 [ext_resource type="Texture2D" uid="uid://nmww8eih04l2" path="res://icon.svg" id="3_wka20"]
+[ext_resource type="Texture2D" uid="uid://r7u3g163c7od" path="res://src/sprites/Ships/GUARDIAN.png" id="5_okgr6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hkyka"]
 size = Vector2(115, 114)
@@ -51,22 +51,25 @@ shape = SubResource("RectangleShape2D_hkyka")
 [node name="Sprite2D" type="Sprite2D" parent="Enemy"]
 texture = ExtResource("3_wka20")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="Player" type="CharacterBody2D" parent="."]
 position = Vector2(573, 550)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("3_goarn")
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="CharacterBody2D"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+position = Vector2(-1, 44)
+scale = Vector2(0.0937362, 0.085944)
+texture = ExtResource("5_okgr6")
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Player"]
 position = Vector2(-590.9, -556.1)
-polygon = PackedVector2Array(547, 627, 583.611, 626.579, 634, 626, 591, 544, 569.636, 584.299)
+polygon = PackedVector2Array(551.9, 627.1, 626.9, 627.1, 590.9, 557.1)
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-position = Vector2(0.0999756, 40.9)
-scale = Vector2(0.164983, 0.181988)
-texture = ExtResource("3_kdmp6")
-
-[node name="Timer" type="Timer" parent="CharacterBody2D"]
+[node name="Attack Speed" type="Timer" parent="Player"]
+wait_time = 0.191
 autostart = true
 
 [node name="Border" type="StaticBody2D" parent="."]
@@ -88,4 +91,4 @@ shape = SubResource("SegmentShape2D_tydkb")
 position = Vector2(31, -12)
 shape = SubResource("SegmentShape2D_ljhpt")
 
-[connection signal="timeout" from="CharacterBody2D/Timer" to="CharacterBody2D" method="_on_cooldown_timeout"]
+[connection signal="timeout" from="Player/Attack Speed" to="Player" method="_on_cooldown_timeout"]
