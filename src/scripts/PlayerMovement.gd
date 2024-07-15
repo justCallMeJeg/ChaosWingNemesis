@@ -6,7 +6,7 @@ extends CharacterBody2D
 func _ready():
 	shoot()
 	
-	
+
 func shoot():
 	var instance = projectile.instantiate()
 	instance.dir = rotation

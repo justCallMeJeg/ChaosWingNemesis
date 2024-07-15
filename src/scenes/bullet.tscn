@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://36uytev6ili4"]
 
 [ext_resource type="Script" path="res://src/scripts/bullet.gd" id="1_swx8j"]
-[ext_resource type="Texture2D" uid="uid://d1avhak61uag0" path="res://src/sprites/GooogledlaserBullet.png" id="1_t0tl2"]
+[ext_resource type="Texture2D" path="res://src/sprites/GooogledlaserBullet.png" id="2_3vc6s"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j7jl1"]
 radius = 11.0
@@ -18,7 +18,7 @@ SPEED = 800
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.629228, 0.575756)
-texture = ExtResource("1_t0tl2")
+texture = ExtResource("2_3vc6s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_j7jl1")
