@@ -1,7 +1,7 @@
 [gd_scene load_steps=18 format=3 uid="uid://bimlodscok8h4"]
 
-[ext_resource type="Texture2D" uid="uid://dyd7oiu6uf3g6" path="res://src/sprites/Untitled126_20240710013553.png" id="1_dwrh0"]
-[ext_resource type="Texture2D" uid="uid://dej1bsng381j2" path="res://src/sprites/Untitled125.png" id="2_0mh7g"]
+[ext_resource type="Texture2D" path="res://src/sprites/Untitled126_20240710013553.png" id="1_hkej4"]
+[ext_resource type="Texture2D" path="res://src/sprites/Untitled125.png" id="2_7e3v1"]
 [ext_resource type="Script" path="res://src/scripts/PlayerMovement.gd" id="3_goarn"]
 [ext_resource type="Texture2D" uid="uid://nmww8eih04l2" path="res://icon.svg" id="3_wka20"]
 [ext_resource type="Texture2D" uid="uid://diy6xmjxh1mdp" path="res://src/sprites/Ships/GUARDIAN-removebg-preview.png" id="5_4qp5t"]
@@ -62,14 +62,14 @@ b = Vector2(-2, 647)
 z_index = -5
 position = Vector2(575, 324)
 scale = Vector2(3.2, 3.18812)
-texture = ExtResource("1_dwrh0")
+texture = ExtResource("1_hkej4")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.513726)
 z_index = -5
 position = Vector2(1098, 58)
-scale = Vector2(1.84861, 1.74783)
-texture = ExtResource("2_0mh7g")
+scale = Vector2(1.8, 1.8)
+texture = ExtResource("2_7e3v1")
 
 [node name="Enemy" type="StaticBody2D" parent="."]
 position = Vector2(571, 212)
@@ -90,8 +90,8 @@ collision_mask = 3
 script = ExtResource("3_goarn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
-position = Vector2(1.90735e-05, 98)
-scale = Vector2(0.3775, 0.2725)
+position = Vector2(1.33514e-05, 95)
+scale = Vector2(0.23375, 0.22375)
 sprite_frames = SubResource("SpriteFrames_0k871")
 autoplay = "default"
 frame_progress = 0.0659597
