@@ -22,14 +22,14 @@ func _on_cooldown_timeout():
 func getInput():
 	var input_direction = Input.get_vector("left", "right", "up", "down")
 	velocity = input_direction * speed
-
-
+	#rotation
+	var look_vector = (get_global_mouse_position() - global_position).normalized()
+	
+	global_rotation = (atan2(look_vector.y, look_vector.x))+0.5 * PI
+	
 	
 func _physics_process(_delta):
 	getInput()
 	move_and_slide()
 	
-	#rotation
-	var look_vector = get_global_mouse_position() - global_position
 	
-	global_rotation = atan2(look_vector.y, look_vector.x) -30

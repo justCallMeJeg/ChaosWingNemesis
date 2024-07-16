@@ -104,6 +104,7 @@ texture = ExtResource("3_wka20")
 
 [node name="Player" type="CharacterBody2D" parent="."]
 position = Vector2(989, 797)
+rotation = 1.5708
 collision_layer = 3
 collision_mask = 3
 motion_mode = 1

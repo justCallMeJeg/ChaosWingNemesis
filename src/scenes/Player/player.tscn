@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=3 uid="uid://dxb3yr0tvtatu"]
+
+[ext_resource type="Texture2D" uid="uid://diy6xmjxh1mdp" path="res://src/sprites/Ships/GUARDIAN-removebg-preview.png" id="1_uy32s"]
+
+[sub_resource type="GDScript" id="GDScript_8vupb"]
+script/source = "extends CharacterBody2D
+
+
+@export var SPEED = 300.0
+@onready var raycast = $RayCast2D
+
+func _ready():
+	pass
+	
+func _physics_process(delta):
+	var move_vector = Vector2()
+	if Input.is_action_just_pressed(\"up\"):
+		move_vector.y -= 1
+	if Input.is_action_just_pressed(\"down\"):
+		move_vector.y += 1
+	if Input.is_action_just_pressed(\"left\"):
+		move_vector.x -= 1
+	if Input.is_action_just_pressed(\"right\"):
+		move_vector.x += 1
+	move_vector = move_vector.normalized()
+	move_and_collide(move_vector * SPEED * delta)
+	
+	var look_vector = get_global_mouse_position() - global_position
+	global_rotation = atan2(look_vector.y,look_vector.x)
+"
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j3u0j"]
+radius = 63.0
+height = 338.0
+
+[node name="Player" type="Node2D"]
+
+[node name="Player" type="CharacterBody2D" parent="."]
+motion_mode = 1
+script = SubResource("GDScript_8vupb")
+
+[node name="RayCast2D" type="RayCast2D" parent="Player"]
+target_position = Vector2(0, 2000)
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+texture = ExtResource("1_uy32s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("CapsuleShape2D_j3u0j")
