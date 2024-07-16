@@ -1,7 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://bimlodscok8h4"]
+[gd_scene load_steps=18 format=3 uid="uid://1af0d61o0chu"]
 
-[ext_resource type="Texture2D" path="res://src/sprites/Untitled126_20240710013553.png" id="1_hkej4"]
-[ext_resource type="Texture2D" path="res://src/sprites/Untitled125.png" id="2_7e3v1"]
+[ext_resource type="Texture2D" uid="uid://dyd7oiu6uf3g6" path="res://src/sprites/Untitled126_20240710013553.png" id="1_hkej4"]
+[ext_resource type="Texture2D" uid="uid://dej1bsng381j2" path="res://src/sprites/Untitled125.png" id="2_7e3v1"]
 [ext_resource type="Script" path="res://src/scripts/PlayerMovement.gd" id="3_goarn"]
 [ext_resource type="Texture2D" uid="uid://nmww8eih04l2" path="res://icon.svg" id="3_wka20"]
 [ext_resource type="Texture2D" uid="uid://diy6xmjxh1mdp" path="res://src/sprites/Ships/GUARDIAN-removebg-preview.png" id="5_4qp5t"]
@@ -11,6 +11,21 @@
 [ext_resource type="Texture2D" uid="uid://dtrttrqgvjcrx" path="res://src/sprites/Trail/frame_3_delay-0.03s.png" id="8_davb2"]
 [ext_resource type="Texture2D" uid="uid://csho1jth2llt8" path="res://src/sprites/Trail/frame_4_delay-0.03s.png" id="9_qe30d"]
 [ext_resource type="Texture2D" uid="uid://l4vqfcua1ftq" path="res://src/sprites/Trail/frame_5_delay-0.03s.png" id="10_kn5gy"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_07jal"]
+a = Vector2(-1, 1010)
+b = Vector2(0, 1)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ne16t"]
+b = Vector2(1956, 0)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_tydkb"]
+a = Vector2(1123, 1085)
+b = Vector2(1123, 69)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ljhpt"]
+a = Vector2(1955, 1012)
+b = Vector2(-4, 1013)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hkyka"]
 size = Vector2(115, 114)
@@ -41,73 +56,20 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_07jal"]
-a = Vector2(-1, 647)
-b = Vector2(0, 1)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_ne16t"]
-b = Vector2(1152, 0)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_tydkb"]
-a = Vector2(316, 717)
-b = Vector2(316, 70)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_ljhpt"]
-a = Vector2(1149, 645)
-b = Vector2(-2, 647)
-
 [node name="TestNode" type="Node2D"]
 
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -5
-position = Vector2(575, 324)
-scale = Vector2(3.2, 3.18812)
+position = Vector2(977, 537.5)
+scale = Vector2(5.46667, 5.38119)
 texture = ExtResource("1_hkej4")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.513726)
 z_index = -5
-position = Vector2(1098, 58)
+position = Vector2(1854, 62)
 scale = Vector2(1.8, 1.8)
 texture = ExtResource("2_7e3v1")
-
-[node name="Enemy" type="StaticBody2D" parent="."]
-position = Vector2(571, 212)
-collision_layer = 6
-collision_mask = 6
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
-position = Vector2(-0.5, 0)
-shape = SubResource("RectangleShape2D_hkyka")
-
-[node name="Sprite2D" type="Sprite2D" parent="Enemy"]
-texture = ExtResource("3_wka20")
-
-[node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(573, 550)
-collision_layer = 3
-collision_mask = 3
-script = ExtResource("3_goarn")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
-position = Vector2(1.33514e-05, 95)
-scale = Vector2(0.23375, 0.22375)
-sprite_frames = SubResource("SpriteFrames_0k871")
-autoplay = "default"
-frame_progress = 0.0659597
-
-[node name="Sprite2D" type="Sprite2D" parent="Player"]
-position = Vector2(-1, 34)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("5_4qp5t")
-
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Player"]
-position = Vector2(-590.9, -556.1)
-polygon = PackedVector2Array(551.9, 627.1, 626.9, 627.1, 590.9, 557.1)
-
-[node name="Attack Speed" type="Timer" parent="Player"]
-wait_time = 0.191
-autostart = true
 
 [node name="Border" type="StaticBody2D" parent="."]
 position = Vector2(-27, 16)
@@ -127,5 +89,44 @@ shape = SubResource("SegmentShape2D_tydkb")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Border"]
 position = Vector2(31, -12)
 shape = SubResource("SegmentShape2D_ljhpt")
+
+[node name="Enemy" type="StaticBody2D" parent="."]
+position = Vector2(571, 212)
+collision_layer = 6
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_hkyka")
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemy"]
+texture = ExtResource("3_wka20")
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(989, 797)
+collision_layer = 3
+collision_mask = 3
+motion_mode = 1
+script = ExtResource("3_goarn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+position = Vector2(0.500013, 61.25)
+scale = Vector2(0.23375, 0.22375)
+sprite_frames = SubResource("SpriteFrames_0k871")
+autoplay = "default"
+frame_progress = 0.0659597
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+position = Vector2(-0.5, 0.25)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5_4qp5t")
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Player"]
+position = Vector2(-590.4, -589.85)
+polygon = PackedVector2Array(551.9, 627.1, 626.9, 627.1, 590.9, 557.1)
+
+[node name="Attack Speed" type="Timer" parent="Player"]
+wait_time = 0.191
+autostart = true
 
 [connection signal="timeout" from="Player/Attack Speed" to="Player" method="_on_cooldown_timeout"]

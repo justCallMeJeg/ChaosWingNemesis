@@ -28,3 +28,8 @@ func getInput():
 func _physics_process(_delta):
 	getInput()
 	move_and_slide()
+	
+	#rotation
+	var look_vector = get_global_mouse_position() - global_position
+	
+	global_rotation = atan2(look_vector.y, look_vector.x) -30
