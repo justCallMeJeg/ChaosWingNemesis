@@ -1,1 +1,24 @@
-{ }
+{
+	
+	"Tier 1" : ["Rapid Fire", "Shield Overcharge", "Afterburners", "Quick Reload", "Evasive Maneuvers"
+	, "Hyper Drive", "Energy Focus", "Precision Targeting", "Armor Plating", "Reactive Shielding"
+	, "Nano Repair", "Laser Focus", "Evasive Protocol", "Overheat Reduction", "Kinetic Barrier"
+	, "Rapid Cooldown", "Blast Radius", "Target Lock", "Agility Boost", "Energy Surge"
+	, "Stabilized Aim", "Impact Dampeners", "Efficient Reactor", "Adaptive Systems", "Blast Shield"
+	, "Quick Charge", "EMP Resistance", "Augmented Sensors", "Field Stabilizer", "Survival Instincts"],
+	
+	"Tier 2" : ["Enhanced Armor", "Overclocked Engines", "High Voltage", "Nanobot Repair", "Power Surge"
+	, "Kinetic Absorption", "Explosive Payload", "Thruster Overdrive", "Ion Shield", "Augmented Reload"
+	, "Adaptive Shielding", "Explosive Shots", "Aftershock", "Fortified Hull", "Power Boost"],
+	
+	"Tier 3" : ["Invincible Barrier", "Berserker Mode", "Phantom Cloak", "EMP Blast", "Overcharged Reactor"
+	,"Adaptive Armor", "Focused Fire", "Disruption Field", "Regenerative Plating", "Quantum Burst"
+	,"Rejuvenating Shields", "Energy Burst", "Graviton Pulse", "Thermal Armor", "Quantum Leap"],
+	
+	"Tier 4" : ["Time Warp", "Total Annihilation", "Ultimate Shield", "Void Strike", "Celestial Force"
+	,"Temporal Shield", "Destruction Protocol", "Voidstep", "Black Hole Generator", "Unyielding Force"
+	,"Devastating Strike", "Quantum Shield", "Supercharged"],
+	
+	"Tier 5" : ["Stellar Overcharge", "Dimensional Rift", "Phoenix Protocol", "Galactic Devastation", "Cosmic Resilience"
+	,"Infinity Shield", "Omega Strike", "Eternal Resilience", "Hypercharge", "Nebula Storm"]
+}
