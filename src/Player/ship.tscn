@@ -31,6 +31,6 @@ script = ExtResource("3_wkc6c")
 MOVE_COMPONENT = NodePath("../MoveComponent")
 MOVE_STATS = ExtResource("4_bmmw1")
 
-[node name="AimShootingComponent" type="Node2D" parent="." node_paths=PackedStringArray("ACTOR")]
+[node name="AimShootingComponent" type="Node" parent="." node_paths=PackedStringArray("ACTOR")]
 script = ExtResource("4_alvt2")
 ACTOR = NodePath("..")

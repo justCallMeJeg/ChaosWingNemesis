@@ -1,5 +1,5 @@
 class_name Aim_ShootingComponent
-extends Node2D
+extends Node
 
 @export var ACTOR : Node2D
 

@@ -4,5 +4,5 @@
 
 [node name="Main" type="Node2D"]
 
-[node name="Ship" parent="." instance=ExtResource("1_q5ja5")]
-position = Vector2(560, 500)
+[node name="Node2D" parent="." instance=ExtResource("1_q5ja5")]
+position = Vector2(301, 944)
