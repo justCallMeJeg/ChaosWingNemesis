@@ -34,3 +34,4 @@ MOVE_STATS = ExtResource("4_bmmw1")
 [node name="AimShootingComponent" type="Node" parent="." node_paths=PackedStringArray("ACTOR")]
 script = ExtResource("4_alvt2")
 ACTOR = NodePath("..")
+shootingInterval = 0.5
