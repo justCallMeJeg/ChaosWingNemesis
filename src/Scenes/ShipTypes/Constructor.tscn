@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3 uid="uid://c0xmpg4go2vyl"]
+
+[ext_resource type="PackedScene" uid="uid://c8rp2pvakxqyu" path="res://src/Scenes/ShipTypes/BaseShip.tscn" id="1_qes1a"]
+[ext_resource type="Texture2D" uid="uid://staskvsqd4hs" path="res://src/Assets/Player/Ships/CONSTRUCTOR_SHIP_SPRITE.png" id="2_vali0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_blrhh"]
+atlas = ExtResource("2_vali0")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dtygc"]
+atlas = ExtResource("2_vali0")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4jkj1"]
+atlas = ExtResource("2_vali0")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2wct7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_blrhh")
+}],
+"loop": true,
+"name": &"bank_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dtygc")
+}],
+"loop": true,
+"name": &"bank_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4jkj1")
+}],
+"loop": true,
+"name": &"center",
+"speed": 5.0
+}]
+
+[node name="BaseShip" instance=ExtResource("1_qes1a")]
+
+[node name="ShipBody" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_2wct7")
+animation = &"center"
+autoplay = "center"
+
+[node name="CollisionPolygon2D" parent="HitboxComponent" index="0"]
+polygon = PackedVector2Array(-1, -4, -1, -8, 1, -8, 1, -4, 3, -4, 3, -3, 4, -3, 4, -1, 5, -1, 5, -3, 7, -3, 7, 0, 8, 0, 8, 3, 6, 3, 3, 3, 3, 6, 2, 6, 2, 7, 1, 7, 1, 8, -1, 8, -1, 7, -2, 7, -2, 6, -3, 6, -3, 3, -8, 3, -8, 0, -7, 0, -7, -3, -5, -3, -5, -1, -4, -1, -4, -3, -3, -3, -3, -4)

@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://dgilgapgt3umn"]
+
+[ext_resource type="PackedScene" uid="uid://c8rp2pvakxqyu" path="res://src/Scenes/ShipTypes/BaseShip.tscn" id="1_2e7yw"]
+[ext_resource type="Texture2D" uid="uid://cak1b0cbm78m3" path="res://src/Assets/Player/Ships/HAVOC_SHIP_SPRITE.png" id="2_hclwa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_glq50"]
+atlas = ExtResource("2_hclwa")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qwbqp"]
+atlas = ExtResource("2_hclwa")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qsa3s"]
+atlas = ExtResource("2_hclwa")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6hp2k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_glq50")
+}],
+"loop": true,
+"name": &"bank_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qwbqp")
+}],
+"loop": true,
+"name": &"bank_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qsa3s")
+}],
+"loop": true,
+"name": &"center",
+"speed": 5.0
+}]
+
+[node name="BaseShip" instance=ExtResource("1_2e7yw")]
+
+[node name="ShipBody" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_6hp2k")
+animation = &"center"
+autoplay = "center"
+
+[node name="CollisionPolygon2D" parent="HitboxComponent" index="0"]
+scale = Vector2(1.03772, 1)
+polygon = PackedVector2Array(-1.9273, -3, -1.9273, -6, -0.963651, -6, -0.963651, -8, 0.963651, -8, 0.963651, -6, 1.9273, -6, 1.9273, -3, 6.74556, -3, 6.74556, -1, 7.70921, -1, 7.70921, 1, 6.74556, 1, 6.74556, 2, 5.78191, 2, 5.78191, 1, 4.81826, 1, 4.81826, 2, 3.85461, 2, 1.9273, 2, 1.9273, 5, 2.89095, 5, 2.89095, 6, 4.81826, 6, 4.81826, 7, -4.81826, 7, -4.81826, 6, -2.89095, 6, -2.89095, 5, -1.9273, 5, -1.9273, 2, -4.81826, 2, -4.81826, 1, -5.78191, 1, -5.78191, 2, -6.74556, 2, -6.74556, 1, -7.70921, 1, -7.70921, -1, -6.74556, -1, -6.74556, -3)

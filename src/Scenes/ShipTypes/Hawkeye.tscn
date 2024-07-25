@@ -44,6 +44,9 @@ animations = [{
 
 [node name="BaseShip" instance=ExtResource("1_uj6ic")]
 
+[node name="ShipFlame" parent="." index="0"]
+animation = &"forwardCenter"
+
 [node name="ShipBody" parent="." index="1"]
 sprite_frames = SubResource("SpriteFrames_abra6")
 animation = &"center"

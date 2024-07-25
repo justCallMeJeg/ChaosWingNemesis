@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3 uid="uid://bedwkfcverj5n"]
+
+[ext_resource type="PackedScene" uid="uid://c8rp2pvakxqyu" path="res://src/Scenes/ShipTypes/BaseShip.tscn" id="1_nhe6b"]
+[ext_resource type="Texture2D" uid="uid://cb65cacwttkn4" path="res://src/Assets/Player/Ships/PHANTOM_SHIP_SPRITE.png" id="2_sydmj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0e1s8"]
+atlas = ExtResource("2_sydmj")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8c087"]
+atlas = ExtResource("2_sydmj")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4hinb"]
+atlas = ExtResource("2_sydmj")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uwnls"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0e1s8")
+}],
+"loop": true,
+"name": &"bank_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8c087")
+}],
+"loop": true,
+"name": &"bank_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4hinb")
+}],
+"loop": true,
+"name": &"center",
+"speed": 5.0
+}]
+
+[node name="BaseShip" instance=ExtResource("1_nhe6b")]
+
+[node name="ShipBody" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_uwnls")
+animation = &"center"
+autoplay = "center"
+
+[node name="CollisionPolygon2D" parent="HitboxComponent" index="0"]
+polygon = PackedVector2Array(-6, -2, -6, -7, -4, -7, -4, -2, -2, -2, -1, -2, -1, -6, 1, -6, 1, -2, 4, -2, 4, -7, 6, -7, 6, 0, 8, 0, 8, 3, 2, 3, 2, 5, 4, 5, 4, 6, -4, 6, -4, 5, -2, 5, -2, 3, -8, 3, -8, 0, -6, 0)
