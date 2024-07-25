@@ -1,7 +1,0 @@
-[gd_resource type="Resource" script_class="MovementStats" load_steps=2 format=3 uid="uid://dnu080yhmoqlx"]
-
-[ext_resource type="Script" path="res://src/Components/MovementStats.gd" id="1_ospan"]
-
-[resource]
-script = ExtResource("1_ospan")
-SPEED = 100
