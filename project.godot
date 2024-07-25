@@ -18,13 +18,18 @@ config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=608
-window/size/viewport_height=1080
+window/size/viewport_width=160
+window/size/viewport_height=240
+window/size/mode=3
 window/size/resizable=false
+window/size/window_width_override=640
+window/size/window_height_override=960
+window/stretch/mode="canvas_items"
+window/stretch/aspect="keep_width"
 
 [dotnet]
 
-project/assembly_name="Chaos Wing- Nemesis"
+project/assembly_name="Chaos Wing: Nemesis"
 
 [input]
 
@@ -99,4 +104,3 @@ attack={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-renderer/rendering_method="mobile"
