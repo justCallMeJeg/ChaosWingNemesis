@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://bwl3c2vee1hqp"]
+[gd_scene load_steps=2 format=3 uid="uid://dknla64h5gqo0"]
 
-[ext_resource type="PackedScene" uid="uid://1873x0nacpy" path="res://src/Player/ship.tscn" id="1_q5ja5"]
+[ext_resource type="PackedScene" uid="uid://cwtnw5we3hvc4" path="res://src/Scenes/ShipTypes/Hawkeye.tscn" id="1_67an6"]
 
 [node name="Main" type="Node2D"]
 
-[node name="Node2D" parent="." instance=ExtResource("1_q5ja5")]
-position = Vector2(301, 944)
+[node name="BaseShip" parent="." instance=ExtResource("1_67an6")]
+position = Vector2(80, 216)
