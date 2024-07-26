@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://c4x0tujxfwxop"]
+
+[ext_resource type="PackedScene" uid="uid://cssinv8uuvpp4" path="res://src/Scenes/BulletTypes/BaseBullet.tscn" id="1_3fkso"]
+[ext_resource type="Texture2D" uid="uid://dyvi5q4unu6mg" path="res://src/Assets/Player/Projectiles/BULLET.png" id="2_5xa1r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_diyx4"]
+atlas = ExtResource("2_5xa1r")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wluwm"]
+atlas = ExtResource("2_5xa1r")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g68vd"]
+atlas = ExtResource("2_5xa1r")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_da0cf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_diyx4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wluwm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g68vd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m60bn"]
+radius = 15.0
+
+[node name="BaseBullet" instance=ExtResource("1_3fkso")]
+
+[node name="BulletBody" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_da0cf")
+autoplay = "default"
+frame_progress = 0.439303
+
+[node name="BulletComponent" parent="." index="1"]
+BulletSpeed = Vector2(0, -100)
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("CircleShape2D_m60bn")

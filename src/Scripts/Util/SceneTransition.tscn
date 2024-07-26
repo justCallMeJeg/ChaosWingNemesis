@@ -64,6 +64,7 @@ _data = {
 }
 
 [node name="SceneTransition" type="CanvasLayer"]
+visible = false
 script = ExtResource("1_dktuu")
 
 [node name="ColorRect" type="ColorRect" parent="."]
