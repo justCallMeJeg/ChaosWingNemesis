@@ -33,7 +33,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m60bn"]
-radius = 15.0
+radius = 3.0
 
 [node name="BaseBullet" instance=ExtResource("1_3fkso")]
 
@@ -42,8 +42,8 @@ sprite_frames = SubResource("SpriteFrames_da0cf")
 autoplay = "default"
 frame_progress = 0.439303
 
-[node name="BulletComponent" parent="." index="1"]
-BulletSpeed = Vector2(0, -100)
+[node name="CollisionShape2D" parent="." index="1"]
+visible = false
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
 shape = SubResource("CircleShape2D_m60bn")

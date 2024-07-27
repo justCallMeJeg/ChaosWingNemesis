@@ -55,7 +55,11 @@ autoplay = "center"
 [node name="HealthComponent" parent="." index="4" node_paths=PackedStringArray("HITBOX_COMPONENT")]
 HITBOX_COMPONENT = NodePath("../HitboxComponent")
 
+[node name="UniqueComponentTest" type="Node" parent="." index="6"]
+
 [node name="CollisionPolygon2D" parent="HitboxComponent" index="0"]
 polygon = PackedVector2Array(1, -8, 1, -1, -1, -1, -1, -8, -5, -8, -5, 2, -8, 2, -8, 8, 8, 8, 8, 2, 5, 2, 5, -8)
 
-[node name="UniqueComponentTest" type="Node" parent="." index="6"]
+[node name="BulletInterval" parent="." index="8"]
+wait_time = 0.5
+autostart = true

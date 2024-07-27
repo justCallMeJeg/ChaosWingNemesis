@@ -1,14 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://cssinv8uuvpp4"]
+[gd_scene load_steps=3 format=3 uid="uid://cssinv8uuvpp4"]
 
 [ext_resource type="Script" path="res://src/Scripts/Bullet/BulletComponent.gd" id="1_etomp"]
 
-[node name="BaseBullet" type="Node2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_jqgyi"]
+
+[node name="BaseBullet" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_etomp")
+BulletSpeed = 1000.0
 
 [node name="BulletBody" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
 
-[node name="BulletComponent" type="Node" parent="." node_paths=PackedStringArray("ACTOR")]
-script = ExtResource("1_etomp")
-ACTOR = NodePath("..")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_jqgyi")
+disabled = true
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -18,5 +24,5 @@ ACTOR = NodePath("..")
 wait_time = 5.0
 autostart = true
 
-[connection signal="body_entered" from="Area2D" to="BulletComponent" method="_on_area_2d_body_entered"]
-[connection signal="timeout" from="Despawn_Timer" to="BulletComponent" method="_on_timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Despawn_Timer" to="." method="_on_despawn_timer_timeout"]

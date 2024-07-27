@@ -4,12 +4,14 @@ extends Node2D
 @onready var SHIP_BODY: AnimatedSprite2D = $ShipBody
 @onready var SHIP_TRAIL: AnimatedSprite2D = $ShipFlame
 
+
 func _ready():
 	# Initialization code if needed
 	pass
 
 func _process(delta):
 	animate_the_ship()
+
 
 func animate_the_ship() -> void:
 	var velocity = MOVE_COMPONENT.VELOCITY
