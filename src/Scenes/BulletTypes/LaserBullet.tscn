@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://5o2eeskofesq"]
+
+[ext_resource type="PackedScene" uid="uid://cssinv8uuvpp4" path="res://src/Scenes/BulletTypes/BaseBullet.tscn" id="1_lth7e"]
+[ext_resource type="Texture2D" uid="uid://cvwxre4d64pby" path="res://src/Assets/Player/Projectiles/LASER_BULLET.png" id="2_8ohwv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j6o7v"]
+atlas = ExtResource("2_8ohwv")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4b1w7"]
+atlas = ExtResource("2_8ohwv")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xkmvn"]
+atlas = ExtResource("2_8ohwv")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sovoj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j6o7v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4b1w7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xkmvn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_if217"]
+radius = 1.0
+height = 6.0
+
+[node name="BaseBullet" instance=ExtResource("1_lth7e")]
+BulletSpeed = 1500.0
+
+[node name="BulletBody" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_sovoj")
+autoplay = "default"
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("CapsuleShape2D_if217")

@@ -361,7 +361,7 @@ script = ExtResource("6_xmu10")
 
 [node name="ShootingComponent" type="Node" parent="." node_paths=PackedStringArray("ACTOR")]
 script = ExtResource("6_2agsu")
-BULLET_SCENE = "Bullet"
+BULLET_SCENE = "LaserBullet"
 ACTOR = NodePath("..")
 
 [node name="HitboxComponent" type="Area2D" parent="."]
