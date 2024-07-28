@@ -21,10 +21,5 @@ func _process(delta: float) -> void:
 	velocity = Vector2(0, -BulletSpeed).rotated(dir)
 	move_and_slide()
 
-func _on_area_2d_body_entered(body):
-	queue_free()
-
-
-
-func _on_despawn_timer_timeout():
-	queue_free()
+func _on_area_2d_body_entered(_body):
+	queue_free()#despawns when hitting a wall or an enemy

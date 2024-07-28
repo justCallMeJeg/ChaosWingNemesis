@@ -37,7 +37,7 @@ radius = 1.0
 height = 6.0
 
 [node name="BaseBullet" instance=ExtResource("1_lth7e")]
-BulletSpeed = 1500.0
+BulletSpeed = 200.0
 
 [node name="BulletBody" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_sovoj")

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dwa50coqb36yq"]
+
+[node name="Border" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_mask = 14
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(0, 0, 160, 0, 160, 240, 0, 240, 0, -1, -1, -1, -1, 241, 161, 241, 161, -1, 0, -1)

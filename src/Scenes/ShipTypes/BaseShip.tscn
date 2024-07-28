@@ -361,14 +361,17 @@ script = ExtResource("6_xmu10")
 
 [node name="ShootingComponent" type="Node" parent="." node_paths=PackedStringArray("ACTOR")]
 script = ExtResource("6_2agsu")
-BULLET_SCENE = "LaserBullet"
+BULLET_SCENE = "baseProjectile"
 ACTOR = NodePath("..")
 
 [node name="HitboxComponent" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 13
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitboxComponent"]
 
 [node name="BulletInterval" type="Timer" parent="."]
 wait_time = 0.75
+autostart = true
 
 [connection signal="timeout" from="BulletInterval" to="ShootingComponent" method="_on_bullet_interval_timeout"]
