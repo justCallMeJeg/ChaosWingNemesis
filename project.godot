@@ -22,18 +22,19 @@ SceneTransition="*res://src/Scripts/Util/SceneTransition.tscn"
 
 [display]
 
-window/size/viewport_width=160
-window/size/viewport_height=240
+window/size/viewport_width=720
+window/size/viewport_height=1280
 window/size/mode=3
-window/size/resizable=false
-window/size/window_width_override=640
-window/size/window_height_override=960
-window/stretch/mode="canvas_items"
-window/stretch/aspect="keep_width"
+window/stretch/mode="viewport"
+window/handheld/orientation=1
 
 [dotnet]
 
 project/assembly_name="Chaos Wing: Nemesis"
+
+[gui]
+
+theme/default_font_subpixel_positioning=0
 
 [input]
 
