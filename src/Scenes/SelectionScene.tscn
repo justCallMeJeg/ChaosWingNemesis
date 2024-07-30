@@ -1,0 +1,1471 @@
+[gd_scene load_steps=44 format=3 uid="uid://dk7damr8src5q"]
+
+[ext_resource type="Script" path="res://src/Scripts/Scenes/SelectionScene.gd" id="1_jk7dh"]
+[ext_resource type="Texture2D" uid="uid://c2yn3f27ee8l0" path="res://src/Assets/UI/BorderUI_SelectionScene_Landscape.png" id="2_y3yif"]
+[ext_resource type="FontFile" uid="uid://qu863qgm5b8q" path="res://src/Assets/UI/PublicPixel-E447g.ttf" id="3_hx5ck"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qxfct"]
+bg_color = Color(0.156863, 0.156863, 0.168627, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gf7mg"]
+texture = ExtResource("2_y3yif")
+modulate_color = Color(1, 1, 1, 0.0980392)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x6suy"]
+bg_color = Color(0.156863, 0.156863, 0.168627, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_warrt"]
+texture = ExtResource("2_y3yif")
+modulate_color = Color(1, 1, 1, 0.0980392)
+
+[sub_resource type="Gradient" id="Gradient_247wr"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 0.192157, 0.192157, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_7otqv"]
+gradient = SubResource("Gradient_247wr")
+
+[sub_resource type="Curve" id="Curve_3mm3a"]
+_data = [Vector2(0.503165, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_ql1jv"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_66u7f"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.121569, 0.317647, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_2rh7i"]
+gradient = SubResource("Gradient_66u7f")
+
+[sub_resource type="Gradient" id="Gradient_8n8vc"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_ob72l"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4etsu"]
+font = ExtResource("3_hx5ck")
+font_size = 64
+font_color = Color(0.156863, 0.156863, 0.168627, 1)
+
+[sub_resource type="Gradient" id="Gradient_5vpcl"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_2fx0b"]
+gradient = SubResource("Gradient_5vpcl")
+fill_from = Vector2(0.52, 0)
+fill_to = Vector2(0.52, 1)
+metadata/_snap_enabled = true
+metadata/_snap_count = 25
+
+[sub_resource type="Gradient" id="Gradient_u5fxa"]
+offsets = PackedFloat32Array(0, 0.528169, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_n0ro0"]
+gradient = SubResource("Gradient_u5fxa")
+fill_from = Vector2(0.5, 0)
+fill_to = Vector2(0.5, 1)
+metadata/_snap_enabled = true
+
+[sub_resource type="LabelSettings" id="LabelSettings_1s7cv"]
+line_spacing = 10.0
+font = ExtResource("3_hx5ck")
+font_size = 64
+font_color = Color(0.156863, 0.156863, 0.168627, 1)
+
+[sub_resource type="Gradient" id="Gradient_30jpn"]
+offsets = PackedFloat32Array(0, 0.00558659, 1)
+colors = PackedColorArray(0.470588, 0.470588, 0.470588, 0.607843, 1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3fu27"]
+gradient = SubResource("Gradient_30jpn")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 1)
+metadata/_snap_enabled = true
+metadata/_snap_count = 8
+
+[sub_resource type="Gradient" id="Gradient_qoiru"]
+offsets = PackedFloat32Array(0, 0.977654, 1)
+colors = PackedColorArray(0.470588, 0.470588, 0.470588, 0.607843, 1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_o4s7f"]
+gradient = SubResource("Gradient_qoiru")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 1)
+metadata/_snap_enabled = true
+
+[sub_resource type="LabelSettings" id="LabelSettings_x7b5g"]
+font = ExtResource("3_hx5ck")
+font_size = 64
+font_color = Color(0.156863, 0.156863, 0.168627, 1)
+
+[sub_resource type="Gradient" id="Gradient_b7a2w"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_nlcc8"]
+gradient = SubResource("Gradient_b7a2w")
+fill_from = Vector2(0.5, 1)
+fill_to = Vector2(0.5, 0)
+metadata/_snap_enabled = true
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_cmlcg"]
+gradient = SubResource("Gradient_u5fxa")
+fill_from = Vector2(0.5, 1)
+fill_to = Vector2(0.5, 0)
+metadata/_snap_enabled = true
+
+[sub_resource type="LabelSettings" id="LabelSettings_na6mp"]
+font = ExtResource("3_hx5ck")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_58ra4"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xshun"]
+font = ExtResource("3_hx5ck")
+font_size = 64
+
+[sub_resource type="Gradient" id="Gradient_6yfdp"]
+colors = PackedColorArray(0.156863, 0.156863, 0.168627, 1, 0.121569, 0.317647, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4oqwc"]
+gradient = SubResource("Gradient_6yfdp")
+fill_from = Vector2(0.495726, 1)
+fill_to = Vector2(0.524217, 0)
+
+[sub_resource type="Gradient" id="Gradient_lymom"]
+colors = PackedColorArray(0.156863, 0.156863, 0.168627, 1, 1, 0.192157, 0.192157, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_nhewn"]
+gradient = SubResource("Gradient_lymom")
+fill_from = Vector2(0.5, 1)
+fill_to = Vector2(0.5, 0)
+metadata/_snap_enabled = true
+
+[sub_resource type="LabelSettings" id="LabelSettings_togvt"]
+font = ExtResource("3_hx5ck")
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_0phog"]
+font = ExtResource("3_hx5ck")
+font_size = 45
+
+[sub_resource type="LabelSettings" id="LabelSettings_r0g54"]
+font = ExtResource("3_hx5ck")
+font_size = 24
+
+[sub_resource type="Animation" id="Animation_2q74l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MainText/LowerSubtitle:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MainText/UpperSubtitle:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MainText/LowerSubtitle:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MainText/UpperSubtitle:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MainText/UpperSubtitle:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -10)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("MainText/LowerSubtitle:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -10)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("MainText/MainTitle:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("MainText/MainTitle:label_settings:font_size")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [45]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("BGTextTexture/TopTextureTextContainer:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -265)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("BGTextTexture/BottomTextureTextContainer:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 1280)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("BGTextTexture/CenterTextureContainer:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("BGTextTexture/CenterTextureContainer/CenterTextureText/CenterTextureTextShineGradient:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("BGTextTexture/BottomTextureTextContainer/BottomTextureText/BottomTextureTextShineGradient:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -265)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("BGTextTexture/TopTextureTextContainer/TopTextureText/TopTextureTextShineGradient:position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 265)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("BorderUI/RightBorderColor:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("BorderUI/LeftBorderColor:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [true]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("BorderUI/LeftBorderColor:position")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-75, 1280)]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("BorderUI/RightBorderColor:position")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(805, 0)]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("BorderUI/LeftBorderColor/LeftBorderTexture:theme_override_styles/panel:modulate_color")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.0980392)]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("BorderUI/RightBorderColor/RightBorderTexture:theme_override_styles/panel:modulate_color")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.0980392)]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("BGTextTexture/CenterTextureContainer:visible")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_1d62m"]
+resource_name = "SelectionStartIntro"
+length = 0.500003
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SceneTransition/SceneTransitionContainer/BorderContainerNode/LeftBorderGhostColor:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.333333, 0.5),
+"transitions": PackedFloat32Array(1, 1.56917, 1.56917, 1),
+"update": 0,
+"values": [Vector2(-85, 1280), Vector2(275, 1280), Vector2(275, 1280), Vector2(-85, 1280)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SceneTransition/SceneTransitionContainer/BorderContainerNode/RightBorderGhostColor:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.333333, 0.5),
+"transitions": PackedFloat32Array(1, 1.56917, 1.56917, 1),
+"update": 0,
+"values": [Vector2(805, 0), Vector2(445, 0), Vector2(445, 0), Vector2(805, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SceneTransition/SceneTransitionContainer/BorderContainerNode/LeftBorderGhostColor:theme_override_styles/panel:bg_color")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.333333, 0.5),
+"transitions": PackedFloat32Array(1, 1.56917, 1.56917, 1),
+"update": 0,
+"values": [Color(0.156863, 0.156863, 0.168627, 1), Color(0.121569, 0.317647, 1, 1), Color(0.121569, 0.317647, 1, 1), Color(0.156863, 0.156863, 0.168627, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SceneTransition/SceneTransitionContainer/BorderContainerNode/RightBorderGhostColor:theme_override_styles/panel:bg_color")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.333333, 0.5),
+"transitions": PackedFloat32Array(1, 1.56917, 1.56917, 1),
+"update": 0,
+"values": [Color(0.156863, 0.156863, 0.168627, 1), Color(1, 0.192157, 0.192157, 1), Color(1, 0.192157, 0.192157, 1), Color(0.156863, 0.156863, 0.168627, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SceneTransition/SceneTransitionContainer/BorderContainerNode/LeftBorderGhostColor/Texture:theme_override_styles/panel:modulate_color")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.333333, 0.5),
+"transitions": PackedFloat32Array(1, 1.56917, 1.56917, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.0980392), Color(1, 1, 1, 0.392157), Color(1, 1, 1, 0.392157), Color(1, 1, 1, 0.0980392)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SceneTransition/SceneTransitionContainer/BorderContainerNode/RightBorderGhostColor/Texture:theme_override_styles/panel:modulate_color")
+tracks/5/interp = 2
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.333333, 0.5),
+"transitions": PackedFloat32Array(1, 1.56917, 1.56917, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.0980392), Color(1, 1, 1, 0.392157), Color(1, 1, 1, 0.392157), Color(1, 1, 1, 0.0980392)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("SceneTransition/ParticleEmitter/RightBorderParticles:emitting")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.133333),
+"transitions": PackedFloat32Array(1.56917),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("SceneTransition/ParticleEmitter/LeftBorderParticles:emitting")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.133333),
+"transitions": PackedFloat32Array(1.56917),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("SceneTransition/LeftBGColor:size")
+tracks/8/interp = 2
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.1, 0.333333, 0.5),
+"transitions": PackedFloat32Array(1.56917, 1.56917, 1),
+"update": 0,
+"values": [Vector2(360, 1280), Vector2(360, 1280), Vector2(0, 1280)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("SceneTransition/RightBGColor:size")
+tracks/9/interp = 2
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0.1, 0.333333, 0.5),
+"transitions": PackedFloat32Array(1.56917, 1.56917, 1),
+"update": 0,
+"values": [Vector2(360, 1280), Vector2(360, 1280), Vector2(0, 1280)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("SceneTransition/RightBGColor:position")
+tracks/10/interp = 2
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0.1, 0.333333, 0.5),
+"transitions": PackedFloat32Array(1.56917, 1.56917, 1),
+"update": 0,
+"values": [Vector2(360, 0), Vector2(360, 0), Vector2(720, 0)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("SceneTransition:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("SceneTransition/SceneTransitionContainer:modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0.333333, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("SceneTransition/LeftBGColor:color")
+tracks/13/interp = 2
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.333333),
+"transitions": PackedFloat32Array(1e+06, 1, 1),
+"update": 0,
+"values": [Color(0.156863, 0.156863, 0.168627, 1), Color(1, 1, 1, 1), Color(0.156863, 0.156863, 0.168627, 1)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("SceneTransition/RightBGColor:color")
+tracks/14/interp = 2
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.333333),
+"transitions": PackedFloat32Array(1e+06, 1, 1),
+"update": 0,
+"values": [Color(0.156863, 0.156863, 0.168627, 1), Color(1, 1, 1, 1), Color(0.156863, 0.156863, 0.168627, 1)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("SceneTransition/ParticleEmitter/LeftGhostParticle:emitting")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0.166667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("SceneTransition/ParticleEmitter/RightGhostParticle:emitting")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0.166667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_u6wqc"]
+resource_name = "SideSelectionIntro"
+length = 1.33334
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MainText/MainTitle:label_settings:font_size")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.5, 0.533333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [45, 36, 1, 36]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MainText/MainTitle:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.533333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MainText/UpperSubtitle:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.466667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MainText/LowerSubtitle:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.466667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MainText/UpperSubtitle:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.433333, 0.533333, 1.33333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("MainText/LowerSubtitle:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.433333, 0.533333, 1.33333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("MainText/UpperSubtitle:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.466667, 0.533333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -10), Vector2(0, -48)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("MainText/LowerSubtitle:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.466667, 0.533333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -10), Vector2(0, 24)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("MainText/MainTitle:label_settings:font_color")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.533333, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.607843)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("BGTextTexture/TopTextureTextContainer:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.466667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("BGTextTexture/BottomTextureTextContainer:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 0.466667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("BGTextTexture/TopTextureTextContainer:position")
+tracks/11/interp = 2
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0.466667, 0.666667),
+"transitions": PackedFloat32Array(1.5, 1),
+"update": 0,
+"values": [Vector2(0, -265), Vector2(0, 0)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("BGTextTexture/BottomTextureTextContainer:position")
+tracks/12/interp = 2
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0.466667, 0.666667),
+"transitions": PackedFloat32Array(1.5, 1),
+"update": 0,
+"values": [Vector2(0, 1280), Vector2(0, 1015)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("BGTextTexture/CenterTextureContainer:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 0.433333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("BGTextTexture/CenterTextureContainer:modulate")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0.433333, 0.533333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("BGTextTexture/CenterTextureContainer/CenterTextureText/CenterTextureTextShineGradient:modulate")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0.533333, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("BGTextTexture/TopTextureTextContainer/TopTextureText/TopTextureTextShineGradient:position")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0.533333, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -265), Vector2(0, 265)]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("BGTextTexture/BottomTextureTextContainer/BottomTextureText/BottomTextureTextShineGradient:position")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0.533333, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 265), Vector2(0, -265)]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("BorderUI/LeftBorderColor:visible")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0, 0.433333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("BorderUI/RightBorderColor:visible")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0, 0.433333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("BorderUI/LeftBorderColor:position")
+tracks/20/interp = 2
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0.433333, 0.666667),
+"transitions": PackedFloat32Array(1.5, 1),
+"update": 0,
+"values": [Vector2(-85, 1280), Vector2(0, 1280)]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("BorderUI/RightBorderColor:position")
+tracks/21/interp = 2
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0.433333, 0.666667),
+"transitions": PackedFloat32Array(1.5, 1),
+"update": 0,
+"values": [Vector2(805, 0), Vector2(720, 0)]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("BorderUI/LeftBorderColor/LeftBorderTexture:theme_override_styles/panel:modulate_color")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0.433333, 0.666667),
+"transitions": PackedFloat32Array(1.5, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("BorderUI/RightBorderColor/RightBorderTexture:theme_override_styles/panel:modulate_color")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0.433333, 0.666667),
+"transitions": PackedFloat32Array(1.5, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("ParticleEmitter/LeftBorderParticles:emitting")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(0.566667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/25/type = "value"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("ParticleEmitter/RightBorderParticles:emitting")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
+"times": PackedFloat32Array(0.566667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g6h08"]
+_data = {
+"RESET": SubResource("Animation_2q74l"),
+"SelectionStartIntro": SubResource("Animation_1d62m"),
+"SideSelectionIntro": SubResource("Animation_u6wqc")
+}
+
+[node name="SelectionScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jk7dh")
+
+[node name="SceneTransition" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="LeftBGColor" type="ColorRect" parent="SceneTransition"]
+anchors_preset = -1
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_right = -360.0
+grow_vertical = 2
+color = Color(0.156863, 0.156863, 0.168627, 1)
+
+[node name="RightBGColor" type="ColorRect" parent="SceneTransition"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_bottom = 1280.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+color = Color(0.156863, 0.156863, 0.168627, 1)
+
+[node name="SceneTransitionContainer" type="Control" parent="SceneTransition"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BorderContainerNode" type="Control" parent="SceneTransition/SceneTransitionContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LeftBorderGhostColor" type="PanelContainer" parent="SceneTransition/SceneTransitionContainer/BorderContainerNode"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.118
+anchor_bottom = 1.0
+offset_left = -85.0
+offset_top = 1280.0
+offset_right = 1110.04
+offset_bottom = 85.0
+rotation = -1.5708
+theme_override_styles/panel = SubResource("StyleBoxFlat_qxfct")
+
+[node name="Texture" type="PanelContainer" parent="SceneTransition/SceneTransitionContainer/BorderContainerNode/LeftBorderGhostColor"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_gf7mg")
+
+[node name="RightBorderGhostColor" type="PanelContainer" parent="SceneTransition/SceneTransitionContainer/BorderContainerNode"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.883
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 169.24
+offset_right = 1365.0
+offset_bottom = -1195.0
+grow_horizontal = 2
+rotation = 1.5708
+theme_override_styles/panel = SubResource("StyleBoxFlat_x6suy")
+
+[node name="Texture" type="PanelContainer" parent="SceneTransition/SceneTransitionContainer/BorderContainerNode/RightBorderGhostColor"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_warrt")
+
+[node name="ParticleEmitter" type="Node2D" parent="SceneTransition"]
+
+[node name="RightBorderParticles" type="CPUParticles2D" parent="SceneTransition/ParticleEmitter"]
+position = Vector2(360, 640)
+scale = Vector2(1, 640)
+amount = 25
+lifetime = 0.75
+one_shot = true
+speed_scale = 1.5
+explosiveness = 0.75
+texture = SubResource("GradientTexture2D_7otqv")
+emission_shape = 3
+emission_rect_extents = Vector2(18, 1)
+gravity = Vector2(3000, 0)
+scale_amount_curve = SubResource("Curve_3mm3a")
+color_ramp = SubResource("Gradient_ql1jv")
+
+[node name="LeftBorderParticles" type="CPUParticles2D" parent="SceneTransition/ParticleEmitter"]
+position = Vector2(361, 640)
+scale = Vector2(1, 640)
+amount = 25
+lifetime = 0.75
+one_shot = true
+speed_scale = 1.5
+explosiveness = 0.75
+texture = SubResource("GradientTexture2D_2rh7i")
+emission_shape = 3
+emission_rect_extents = Vector2(18, 1)
+gravity = Vector2(-3000, 0)
+scale_amount_curve = SubResource("Curve_3mm3a")
+color_ramp = SubResource("Gradient_8n8vc")
+
+[node name="LeftGhostParticle" type="CPUParticles2D" parent="SceneTransition/ParticleEmitter"]
+position = Vector2(402, 640)
+amount = 3
+one_shot = true
+speed_scale = 3.5
+explosiveness = 0.5
+texture = ExtResource("2_y3yif")
+gravity = Vector2(-3000, 0)
+angle_min = 90.0
+angle_max = 90.0
+color = Color(1, 1, 1, 0.588235)
+color_ramp = SubResource("Gradient_ob72l")
+
+[node name="RightGhostParticle" type="CPUParticles2D" parent="SceneTransition/ParticleEmitter"]
+position = Vector2(402, 640)
+amount = 3
+one_shot = true
+speed_scale = 3.5
+explosiveness = 0.5
+texture = ExtResource("2_y3yif")
+gravity = Vector2(3000, 0)
+angle_min = 90.0
+angle_max = 90.0
+color = Color(1, 1, 1, 0.588235)
+color_ramp = SubResource("Gradient_ob72l")
+
+[node name="BGColor" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+color = Color(0.156863, 0.156863, 0.168627, 1)
+
+[node name="ParticleEmitter" type="Node2D" parent="."]
+
+[node name="LeftBorderParticles" type="CPUParticles2D" parent="ParticleEmitter"]
+position = Vector2(25, 640)
+scale = Vector2(1, 640)
+emitting = false
+amount = 25
+one_shot = true
+speed_scale = 3.0
+explosiveness = 0.75
+texture = SubResource("GradientTexture2D_2rh7i")
+emission_shape = 3
+emission_rect_extents = Vector2(18, 1)
+gravity = Vector2(250, 0)
+angular_velocity_min = 50.0
+angular_velocity_max = 50.0
+scale_amount_curve = SubResource("Curve_3mm3a")
+color_ramp = SubResource("Gradient_8n8vc")
+
+[node name="RightBorderParticles" type="CPUParticles2D" parent="ParticleEmitter"]
+position = Vector2(695, 640)
+scale = Vector2(1, 640)
+emitting = false
+amount = 25
+one_shot = true
+speed_scale = 3.0
+explosiveness = 0.75
+texture = SubResource("GradientTexture2D_7otqv")
+emission_shape = 3
+emission_rect_extents = Vector2(18, 1)
+gravity = Vector2(-250, 0)
+angular_velocity_min = -50.0
+angular_velocity_max = -50.0
+scale_amount_curve = SubResource("Curve_3mm3a")
+color_ramp = SubResource("Gradient_ql1jv")
+
+[node name="BGTextTexture" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TopTextureTextContainer" type="VBoxContainer" parent="BGTextTexture"]
+modulate = Color(1, 1, 1, 0.686275)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = -265.0
+grow_horizontal = 2
+pivot_offset = Vector2(860, 402)
+
+[node name="TopTextureText" type="Label" parent="BGTextTexture/TopTextureTextContainer"]
+clip_children = 2
+layout_mode = 2
+text = "TOP
+SIDE
+TOP
+SIDE"
+label_settings = SubResource("LabelSettings_4etsu")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TopTextureTextGradient" type="TextureRect" parent="BGTextTexture/TopTextureTextContainer/TopTextureText"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_2fx0b")
+
+[node name="TopTextureTextShineGradient" type="TextureRect" parent="BGTextTexture/TopTextureTextContainer/TopTextureText"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 265.0
+offset_bottom = 264.999
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_n0ro0")
+
+[node name="CenterTextureContainer" type="VBoxContainer" parent="BGTextTexture"]
+visible = false
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -180.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterTextureText" type="Label" parent="BGTextTexture/CenterTextureContainer"]
+modulate = Color(1, 1, 1, 0.392157)
+clip_children = 2
+layout_mode = 2
+text = "VSVSVSVSVS
+VSVSVSVSVS
+VSVSVSVSVS
+VSVSVSVSVS
+VSVSVSVSVS"
+label_settings = SubResource("LabelSettings_1s7cv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterTextureTextGradient" type="TextureRect" parent="BGTextTexture/CenterTextureContainer/CenterTextureText"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_3fu27")
+
+[node name="CenterTextureTextShineGradient" type="TextureRect" parent="BGTextTexture/CenterTextureContainer/CenterTextureText"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -35.0
+offset_top = -15.0
+offset_right = -35.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.1, 1.1)
+texture = SubResource("GradientTexture2D_o4s7f")
+
+[node name="BottomTextureTextContainer" type="VBoxContainer" parent="BGTextTexture"]
+modulate = Color(1, 1, 1, 0.686275)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 265.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(860, -613)
+
+[node name="BottomTextureText" type="Label" parent="BGTextTexture/BottomTextureTextContainer"]
+clip_children = 2
+layout_mode = 2
+text = "BOTTOM
+SIDE
+BOTTOM
+SIDE"
+label_settings = SubResource("LabelSettings_x7b5g")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BottomTextureTextGradient" type="TextureRect" parent="BGTextTexture/BottomTextureTextContainer/BottomTextureText"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_nlcc8")
+
+[node name="BottomTextureTextShineGradient" type="TextureRect" parent="BGTextTexture/BottomTextureTextContainer/BottomTextureText"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -265.0
+offset_bottom = -265.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_cmlcg")
+
+[node name="TooltipUI" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TopTooltipContainer" type="VBoxContainer" parent="TooltipUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.044
+offset_bottom = -0.320004
+grow_horizontal = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TooltipUI/TopTooltipContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="TopTooltipText" type="Label" parent="TooltipUI/TopTooltipContainer/MarginContainer"]
+layout_mode = 2
+text = "TOOLTIP PLACEHOLDER"
+label_settings = SubResource("LabelSettings_na6mp")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="BottomTooltipContainer" type="VBoxContainer" parent="TooltipUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.956
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.319946
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TooltipUI/BottomTooltipContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="BottomTooltipText" type="Label" parent="TooltipUI/BottomTooltipContainer/MarginContainer"]
+layout_mode = 2
+text = "TOOLTIP PLACEHOLDER"
+label_settings = SubResource("LabelSettings_na6mp")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="BorderUI" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LeftBorderColor" type="PanelContainer" parent="BorderUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.118
+anchor_bottom = 1.0
+offset_left = -75.0
+offset_top = 1280.0
+offset_right = 1120.04
+offset_bottom = 85.0
+rotation = -1.5708
+theme_override_styles/panel = SubResource("StyleBoxFlat_qxfct")
+
+[node name="LeftBorderTexture" type="PanelContainer" parent="BorderUI/LeftBorderColor"]
+material = SubResource("ShaderMaterial_58ra4")
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_gf7mg")
+
+[node name="LeftBorderContainer" type="VBoxContainer" parent="BorderUI/LeftBorderColor/LeftBorderTexture"]
+layout_mode = 2
+
+[node name="LeftMarginContainer" type="MarginContainer" parent="BorderUI/LeftBorderColor/LeftBorderTexture/LeftBorderContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_bottom = 10
+metadata/_edit_use_anchors_ = true
+
+[node name="LeftBorderText" type="Label" parent="BorderUI/LeftBorderColor/LeftBorderTexture/LeftBorderContainer/LeftMarginContainer"]
+clip_children = 2
+layout_mode = 2
+text = "SELECT A SIDE!"
+label_settings = SubResource("LabelSettings_xshun")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LeftBorderTextGradient" type="TextureRect" parent="BorderUI/LeftBorderColor/LeftBorderTexture/LeftBorderContainer/LeftMarginContainer/LeftBorderText"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_4oqwc")
+expand_mode = 1
+
+[node name="RightBorderColor" type="PanelContainer" parent="BorderUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.883
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 169.24
+offset_right = 1365.0
+offset_bottom = -1196.0
+grow_horizontal = 2
+rotation = 1.5708
+theme_override_styles/panel = SubResource("StyleBoxFlat_x6suy")
+
+[node name="RightBorderTexture" type="PanelContainer" parent="BorderUI/RightBorderColor"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_warrt")
+
+[node name="RightBorderContainer" type="VBoxContainer" parent="BorderUI/RightBorderColor/RightBorderTexture"]
+layout_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="RightMarginContainer" type="MarginContainer" parent="BorderUI/RightBorderColor/RightBorderTexture/RightBorderContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="RightBorderText" type="Label" parent="BorderUI/RightBorderColor/RightBorderTexture/RightBorderContainer/RightMarginContainer"]
+clip_children = 2
+layout_mode = 2
+text = "SELECT A SIDE!"
+label_settings = SubResource("LabelSettings_xshun")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RightBorderTextGradient" type="TextureRect" parent="BorderUI/RightBorderColor/RightBorderTexture/RightBorderContainer/RightMarginContainer/RightBorderText"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_nhewn")
+expand_mode = 1
+
+[node name="MainText" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="UpperSubtitle" type="Label" parent="MainText"]
+visible = false
+clip_children = 2
+layout_mode = 2
+anchor_right = 1.0
+offset_top = -10.0
+offset_bottom = 14.0
+text = "SELECT YOUR SIDE"
+label_settings = SubResource("LabelSettings_togvt")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MainTitle" type="Label" parent="MainText"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -18.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "SELECT YOUR SIDE"
+label_settings = SubResource("LabelSettings_0phog")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LowerSubtitle" type="Label" parent="MainText"]
+visible = false
+clip_children = 2
+layout_mode = 2
+anchor_right = 1.0
+offset_top = -10.0
+offset_bottom = 14.0
+text = "SELECT YOUR SIDE"
+label_settings = SubResource("LabelSettings_r0g54")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_g6h08")
+}
