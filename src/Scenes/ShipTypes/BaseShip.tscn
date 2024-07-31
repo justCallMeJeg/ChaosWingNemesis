@@ -355,6 +355,7 @@ ACTOR = NodePath("..")
 [node name="InputComponent" type="Node" parent="." node_paths=PackedStringArray("MOVE_COMPONENT")]
 script = ExtResource("4_7juyf")
 MOVE_COMPONENT = NodePath("../MoveComponent")
+SPEED = 500
 
 [node name="HealthComponent" type="Node" parent="."]
 script = ExtResource("6_xmu10")
@@ -371,7 +372,7 @@ collision_mask = 13
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitboxComponent"]
 
 [node name="BulletInterval" type="Timer" parent="."]
-wait_time = 0.75
+wait_time = 0.025
 autostart = true
 
 [connection signal="timeout" from="BulletInterval" to="ShootingComponent" method="_on_bullet_interval_timeout"]

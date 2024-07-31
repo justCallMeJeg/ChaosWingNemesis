@@ -36,6 +36,7 @@ animations = [{
 radius = 3.0
 
 [node name="BaseBullet" instance=ExtResource("1_3fkso")]
+scale = Vector2(4, 4)
 
 [node name="BulletBody" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_da0cf")
