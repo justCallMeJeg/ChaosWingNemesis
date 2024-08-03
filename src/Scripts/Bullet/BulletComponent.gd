@@ -17,7 +17,7 @@ func _ready():
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	velocity = Vector2(0, -BulletSpeed).rotated(dir)
 	move_and_slide()
 

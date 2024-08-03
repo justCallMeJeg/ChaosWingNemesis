@@ -1,4 +1,4 @@
-extends Node2D
+extends CharacterBody2D
 
 @onready var MOVE_COMPONENT: MoveComponent = $MoveComponent as MoveComponent
 @onready var SHIP_BODY: AnimatedSprite2D = $ShipBody
@@ -11,6 +11,7 @@ func _ready():
 
 func _process(delta):
 	animate_the_ship()
+	move_and_slide()#this method detects collision and prevents the player from clipping through the wall
 
 
 func animate_the_ship() -> void:

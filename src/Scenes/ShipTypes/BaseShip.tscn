@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://c8rp2pvakxqyu"]
+[gd_scene load_steps=52 format=3 uid="uid://c8rp2pvakxqyu"]
 
 [ext_resource type="Script" path="res://src/Scripts/Player/BaseShip.gd" id="1_bfdr7"]
 [ext_resource type="Texture2D" uid="uid://c4k50mccjt7c0" path="res://src/Assets/Player/SHIP_TRAIL.png" id="2_ys52p"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://src/Scripts/Components/InputComponent.gd" id="4_7juyf"]
 [ext_resource type="Script" path="res://src/Scripts/Components/ShootingComponent.gd" id="6_2agsu"]
 [ext_resource type="Script" path="res://src/Scripts/Components/HealthComponent.gd" id="6_xmu10"]
+[ext_resource type="Script" path="res://src/Scripts/Components/HitboxComponent.gd" id="7_ic3rc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_552c3"]
 atlas = ExtResource("2_ys52p")
@@ -334,14 +335,22 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="BaseShip" type="Node2D"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wa812"]
+radius = 4.0
+height = 16.0
+
+[node name="BaseShip" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 0
+motion_mode = 1
+platform_floor_layers = 4294967040
 script = ExtResource("1_bfdr7")
 
 [node name="ShipFlame" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 12)
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_sn1mr")
-animation = &"backwardsRight"
+animation = &"forwardCenter"
 autoplay = "forwardCenter"
 offset = Vector2(-0.412369, -0.969067)
 
@@ -365,14 +374,19 @@ script = ExtResource("6_2agsu")
 BULLET_SCENE = "baseProjectile"
 ACTOR = NodePath("..")
 
+[node name="BulletInterval" type="Timer" parent="."]
+wait_time = 0.05
+autostart = true
+
+[node name="CollisionPolygon2D2" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_wa812")
+
 [node name="HitboxComponent" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 13
+script = ExtResource("7_ic3rc")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitboxComponent"]
 
-[node name="BulletInterval" type="Timer" parent="."]
-wait_time = 0.025
-autostart = true
-
 [connection signal="timeout" from="BulletInterval" to="ShootingComponent" method="_on_bullet_interval_timeout"]
+[connection signal="body_entered" from="HitboxComponent" to="HitboxComponent" method="_on_body_entered"]
