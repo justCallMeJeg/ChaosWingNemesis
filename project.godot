@@ -32,6 +32,10 @@ window/handheld/orientation=1
 
 project/assembly_name="Chaos Wing: Nemesis"
 
+[editor]
+
+movie_writer/movie_file="C:/Users/Geger John Paul/Desktop/Coding/Godot Projects/ChaosWingNemesis/TEST.avi"
+
 [filesystem]
 
 import/blender/enabled=false
