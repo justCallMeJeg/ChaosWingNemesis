@@ -8,7 +8,6 @@
 [ext_resource type="FontFile" uid="uid://qu863qgm5b8q" path="res://src/Assets/UI/PublicPixel-E447g.ttf" id="3_hx5ck"]
 [ext_resource type="Script" path="res://src/Scripts/Scenes/SelectionScene/SceneSelectionHandler.gd" id="4_qlunh"]
 [ext_resource type="AudioStream" uid="uid://c2pm2qmyhaui1" path="res://src/Assets/Sound/BG/SelectionScene.ogg" id="9_fgtpl"]
-[ext_resource type="Animation" uid="uid://bw3y4mbwo806f" path="res://src/Assets/Scenes/Animations/SelectionScene/SideSelectionIntro.res" id="10_ny7pq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qxfct"]
 bg_color = Color(0.121569, 0.317647, 1, 1)
@@ -1021,6 +1020,119 @@ gradient = SubResource("Gradient_6yfdp")
 fill_from = Vector2(0.495726, 1)
 fill_to = Vector2(0.524217, 0)
 
+[sub_resource type="Animation" id="Animation_wpakf"]
+resource_name = "PlayerReadyState"
+length = 0.300003
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:theme_override_styles/panel:bg_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.121569, 0.317647, 1, 1), Color(0.121569, 0.317647, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("LeftBorderTexture:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.233333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0.196078)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("LeftBorderTexture/LeftBorderContainer/LeftMarginContainer/LeftBorderText/LeftBorderTextGradient:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../../ParticleEmitter/LeftBorderParticles:emitting")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("LeftBorderTexture:theme_override_styles/panel:modulate_color")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../../ParticleEmitter/LeftBorderParticles:one_shot")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../../ParticleEmitter/LeftBorderParticles:explosiveness")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../../ParticleEmitter/LeftBorderParticles:lifetime")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.25]
+}
+
 [sub_resource type="Animation" id="Animation_cj53y"]
 length = 0.001
 tracks/0/type = "value"
@@ -1144,94 +1256,6 @@ tracks/9/keys = {
 "values": ["SELECT A SIDE!"]
 }
 
-[sub_resource type="Animation" id="Animation_r076f"]
-resource_name = "SideSelectionSceneIntro"
-step = 0.0333333
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.433333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.433333, 0.666667),
-"transitions": PackedFloat32Array(1.5, 1),
-"update": 0,
-"values": [Vector2(-85, 1280), Vector2(0, 1280)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../../ParticleEmitter/LeftBorderParticles:emitting")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.566667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("LeftBorderTexture:theme_override_styles/panel:modulate_color")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0.433333, 0.666666),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../../ParticleEmitter/LeftBorderParticles:one_shot")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("../../ParticleEmitter/LeftBorderParticles:lifetime")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [1.0]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("LeftBorderTexture/LeftBorderContainer/LeftMarginContainer/LeftBorderText:text")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["SELECT YOUR SIDE!"]
-}
-
 [sub_resource type="Animation" id="Animation_1bpse"]
 resource_name = "ShipSelectionSceneIntro"
 step = 0.0333333
@@ -1320,7 +1344,118 @@ tracks/6/keys = {
 "values": ["SELECT YOUR SHIP!"]
 }
 
-[sub_resource type="Animation" id="Animation_wpakf"]
+[sub_resource type="Animation" id="Animation_r076f"]
+resource_name = "SideSelectionSceneIntro"
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.433333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.433333, 0.666667),
+"transitions": PackedFloat32Array(1.5, 1),
+"update": 0,
+"values": [Vector2(-85, 1280), Vector2(0, 1280)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../ParticleEmitter/LeftBorderParticles:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.566667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("LeftBorderTexture:theme_override_styles/panel:modulate_color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.433333, 0.666666),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../../ParticleEmitter/LeftBorderParticles:one_shot")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../../ParticleEmitter/LeftBorderParticles:lifetime")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("LeftBorderTexture/LeftBorderContainer/LeftMarginContainer/LeftBorderText:text")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["SELECT YOUR SIDE!"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x8v20"]
+_data = {
+"PlayerReadyState": SubResource("Animation_wpakf"),
+"RESET": SubResource("Animation_cj53y"),
+"ShipSelectionSceneIntro": SubResource("Animation_1bpse"),
+"SideSelectionSceneIntro": SubResource("Animation_r076f")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1h55g"]
+bg_color = Color(0.156863, 0.156863, 0.168627, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sfdq6"]
+texture = ExtResource("2_y3yif")
+
+[sub_resource type="Gradient" id="Gradient_lymom"]
+colors = PackedColorArray(0.156863, 0.156863, 0.168627, 1, 1, 0.192157, 0.192157, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_nhewn"]
+gradient = SubResource("Gradient_lymom")
+fill_from = Vector2(0.5, 1)
+fill_to = Vector2(0.5, 0)
+metadata/_snap_enabled = true
+
+[sub_resource type="Animation" id="Animation_51bvx"]
 resource_name = "PlayerReadyState"
 length = 0.300003
 step = 0.0333333
@@ -1346,12 +1481,12 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(0.121569, 0.317647, 1, 1), Color(0.121569, 0.317647, 1, 1)]
+"values": [Color(1, 1, 1, 1), Color(1, 0.192157, 0.192157, 1), Color(1, 0.192157, 0.192157, 1)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("LeftBorderTexture:self_modulate")
+tracks/2/path = NodePath("RightBorderTexture:self_modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -1363,43 +1498,43 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("LeftBorderTexture/LeftBorderContainer/LeftMarginContainer/LeftBorderText/LeftBorderTextGradient:modulate")
+tracks/3/path = NodePath("RightBorderTexture:theme_override_styles/panel:modulate_color")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../../ParticleEmitter/LeftBorderParticles:emitting")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("LeftBorderTexture:theme_override_styles/panel:modulate_color")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("RightBorderTexture/RightBorderContainer/RightMarginContainer/RightBorderText/RightBorderTextGradient:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../../ParticleEmitter/RightBorderParticles:emitting")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("../../ParticleEmitter/LeftBorderParticles:one_shot")
+tracks/6/path = NodePath("../../ParticleEmitter/RightBorderParticles:one_shot")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -1411,7 +1546,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("../../ParticleEmitter/LeftBorderParticles:explosiveness")
+tracks/7/path = NodePath("../../ParticleEmitter/RightBorderParticles:explosiveness")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -1423,7 +1558,7 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("../../ParticleEmitter/LeftBorderParticles:lifetime")
+tracks/8/path = NodePath("../../ParticleEmitter/RightBorderParticles:lifetime")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -1432,29 +1567,6 @@ tracks/8/keys = {
 "update": 0,
 "values": [1.25]
 }
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_x8v20"]
-_data = {
-"PlayerReadyState": SubResource("Animation_wpakf"),
-"RESET": SubResource("Animation_cj53y"),
-"ShipSelectionSceneIntro": SubResource("Animation_1bpse"),
-"SideSelectionSceneIntro": SubResource("Animation_r076f")
-}
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1h55g"]
-bg_color = Color(0.156863, 0.156863, 0.168627, 1)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sfdq6"]
-texture = ExtResource("2_y3yif")
-
-[sub_resource type="Gradient" id="Gradient_lymom"]
-colors = PackedColorArray(0.156863, 0.156863, 0.168627, 1, 1, 0.192157, 0.192157, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_nhewn"]
-gradient = SubResource("Gradient_lymom")
-fill_from = Vector2(0.5, 1)
-fill_to = Vector2(0.5, 0)
-metadata/_snap_enabled = true
 
 [sub_resource type="Animation" id="Animation_ljcq8"]
 length = 0.001
@@ -1579,70 +1691,6 @@ tracks/9/keys = {
 "values": ["SELECT A SIDE!"]
 }
 
-[sub_resource type="Animation" id="Animation_hbnwj"]
-resource_name = "SideSelectionSceneIntro"
-step = 0.0333333
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.433333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.433333, 0.666667),
-"transitions": PackedFloat32Array(1.5, 1),
-"update": 0,
-"values": [Vector2(805, 0), Vector2(720, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../../ParticleEmitter/RightBorderParticles:emitting")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.566667),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("RightBorderTexture:theme_override_styles/panel:modulate_color")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0.433333, 0.666666),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("RightBorderTexture/RightBorderContainer/RightMarginContainer/RightBorderText:text")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["SELECT YOUR SIDE!"]
-}
-
 [sub_resource type="Animation" id="Animation_7wq1q"]
 resource_name = "ShipSelectionSceneIntro"
 step = 0.0333333
@@ -1707,9 +1755,8 @@ tracks/4/keys = {
 "values": ["SELECT YOUR SHIP!"]
 }
 
-[sub_resource type="Animation" id="Animation_51bvx"]
-resource_name = "PlayerReadyState"
-length = 0.300003
+[sub_resource type="Animation" id="Animation_hbnwj"]
+resource_name = "SideSelectionSceneIntro"
 step = 0.0333333
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -1718,34 +1765,34 @@ tracks/0/path = NodePath(".:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.433333),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [true]
+"values": [false, true]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath(".:theme_override_styles/panel:bg_color")
-tracks/1/interp = 1
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0.433333, 0.666667),
+"transitions": PackedFloat32Array(1.5, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 0.192157, 0.192157, 1), Color(1, 0.192157, 0.192157, 1)]
+"values": [Vector2(805, 0), Vector2(720, 0)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("RightBorderTexture:self_modulate")
+tracks/2/path = NodePath("../../ParticleEmitter/RightBorderParticles:emitting")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.0333333, 0.233333),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0.196078)]
+"times": PackedFloat32Array(0.566667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -1754,70 +1801,22 @@ tracks/3/path = NodePath("RightBorderTexture:theme_override_styles/panel:modulat
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("RightBorderTexture/RightBorderContainer/RightMarginContainer/RightBorderText/RightBorderTextGradient:modulate")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.1),
+"times": PackedFloat32Array(0.433333, 0.666666),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("../../ParticleEmitter/RightBorderParticles:emitting")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("RightBorderTexture/RightBorderContainer/RightMarginContainer/RightBorderText:text")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("../../ParticleEmitter/RightBorderParticles:one_shot")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("../../ParticleEmitter/RightBorderParticles:explosiveness")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("../../ParticleEmitter/RightBorderParticles:lifetime")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [1.25]
+"values": ["SELECT YOUR SIDE!"]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_v30kr"]
@@ -1882,83 +1881,6 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
-}
-
-[sub_resource type="Animation" id="Animation_1ffk2"]
-resource_name = "SideSelectionSceneIntro"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TopTooltipContainer:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.566666),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("BottomTooltipContainer:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.566666),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("TopTooltipContainer:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.566666, 0.999999),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("BottomTooltipContainer:modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0.566666, 0.999999),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("TopTooltipContainer/MarginContainer/TopTooltipText:text")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["PRESS [W] [S] TO SELECT
-PRESS [SPACE] TO CONFIRM"]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("BottomTooltipContainer/MarginContainer/BottomTooltipText:text")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["PRESS [↑ ] [↓] TO SELECT
-PRESS [ENTER] TO CONFIRM"]
 }
 
 [sub_resource type="Animation" id="Animation_s2puj"]
@@ -2035,6 +1957,83 @@ tracks/5/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": ["PRESS [←] [→] TO SELECT
+PRESS [ENTER] TO CONFIRM"]
+}
+
+[sub_resource type="Animation" id="Animation_1ffk2"]
+resource_name = "SideSelectionSceneIntro"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TopTooltipContainer:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.566666),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BottomTooltipContainer:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.566666),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TopTooltipContainer:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.566666, 0.999999),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BottomTooltipContainer:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.566666, 0.999999),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TopTooltipContainer/MarginContainer/TopTooltipText:text")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["PRESS [W] [S] TO SELECT
+PRESS [SPACE] TO CONFIRM"]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("BottomTooltipContainer/MarginContainer/BottomTooltipText:text")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["PRESS [↑ ] [↓] TO SELECT
 PRESS [ENTER] TO CONFIRM"]
 }
 
@@ -2744,34 +2743,6 @@ tracks/3/keys = {
 "values": [false]
 }
 
-[sub_resource type="Animation" id="Animation_34npv"]
-resource_name = "StageTransitionState"
-step = 0.0333333
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("P1Indicator:theme_override_styles/panel:bg_color")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0.156863, 0.156863, 0.168627, 1), Color(0.121569, 0.317647, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("P2Indicator:theme_override_styles/panel:bg_color")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0.156863, 0.156863, 0.168627, 1), Color(1, 0.192157, 0.192157, 1)]
-}
-
 [sub_resource type="Animation" id="Animation_rcqgm"]
 resource_name = "SideSelectionSceneIntro"
 step = 0.0333333
@@ -2846,6 +2817,34 @@ tracks/5/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_34npv"]
+resource_name = "StageTransitionState"
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("P1Indicator:theme_override_styles/panel:bg_color")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.156863, 0.156863, 0.168627, 1), Color(0.121569, 0.317647, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("P2Indicator:theme_override_styles/panel:bg_color")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.156863, 0.156863, 0.168627, 1), Color(1, 0.192157, 0.192157, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_e4scx"]
@@ -3009,11 +3008,100 @@ tracks/5/keys = {
 "values": ["SELECT YOUR SHIP"]
 }
 
+[sub_resource type="Animation" id="Animation_kiqh8"]
+resource_name = "SideSelectionSceneIntro"
+length = 1.6
+step = 0.0333333
+tracks/0/type = "animation"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MainText/TextAnimPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": PackedStringArray("RESET", "SideSelectionSceneIntro"),
+"times": PackedFloat32Array(0.0333333, 0.0342688)
+}
+tracks/1/type = "animation"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BorderUI/LeftBorderColor/BorderAnimPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": PackedStringArray("RESET", "SideSelectionSceneIntro"),
+"times": PackedFloat32Array(0.0333333, 0.233333)
+}
+tracks/2/type = "animation"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BorderUI/RightBorderColor/BorderAnimPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": PackedStringArray("RESET", "SideSelectionSceneIntro"),
+"times": PackedFloat32Array(0.0333333, 0.233333)
+}
+tracks/3/type = "animation"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BGTextTexture/BGTextTextureAnimPlayer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": PackedStringArray("RESET", "SelectionSceneIntro"),
+"times": PackedFloat32Array(0.0333333, 0.233333)
+}
+tracks/4/type = "animation"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TooltipUI/TipAnimPlayer")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"clips": PackedStringArray("RESET", "SideSelectionSceneIntro"),
+"times": PackedFloat32Array(0.0333333, 0.233333)
+}
+tracks/5/type = "animation"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SideSelectionIndicator/IndicatorAnimPlayer")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"clips": PackedStringArray("RESET", "SideSelectionSceneIntro"),
+"times": PackedFloat32Array(0.0333333, 0.233333)
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("MainText/MainTitle:text")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["SELECT YOUR SIDE"]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("MainText/MainTitle:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_g6h08"]
 _data = {
 "RESET": SubResource("Animation_2q74l"),
 "ShipSelectionSceneIntro": SubResource("Animation_pw0xb"),
-"SideSelectionSceneIntro": ExtResource("10_ny7pq")
+"SideSelectionSceneIntro": SubResource("Animation_kiqh8")
 }
 
 [node name="SelectionScene" type="Control"]
