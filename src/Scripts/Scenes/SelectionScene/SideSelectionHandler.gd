@@ -30,7 +30,7 @@ extends Node
 
 # Constants for assets
 const ERROR_SFX = preload("res://src/Assets/Sound/UI/ErrorSFX.wav")
-const SELECT_SFX = preload("res://src/Assets/Sound/UI/SelectSFX.wav")
+const CONFIRM_SFX = preload("res://src/Assets/Sound/UI/ConfirmSFX.wav")
 
 # Constants for side select indicator positions
 const DEFAULT_POSITION = 620
@@ -161,7 +161,7 @@ func handleP2Selected(selectionState: SideSelectionPosition) -> void:
 func updateTooltipAndPlaySound(selectionState: SideSelectionPosition, topTooltip: Label, bottomTooltip: Label, waitingText: String) -> void:
 	var selectedSide = topTooltip if selectionState == SideSelectionPosition.TOP else bottomTooltip
 	selectedSide.text = waitingText
-	playSound(SELECT_SFX, 1.0, 1.5)
+	playSound(CONFIRM_SFX, 1.0, 1.5)
 
 # Plays a sound with a random pitch scale
 func playSound(sound: AudioStream, min_pitch: float, max_pitch: float) -> void:

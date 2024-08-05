@@ -8,8 +8,17 @@ extends Node
 @onready var lowerSubtitle = $"../MainText/LowerSubtitle"
 
 @onready var sideSelectionIndicators = $"../SideSelectionIndicator"
+# Enums for scene states
+enum SelectionStages { SideSelect, ShipSelect, SceneSelect }
+enum ShipSelectionDictionary { DEFAULT = -1, TOP, BOTTOM }
 
-enum SideSelectionPosition { TOP, BOTTOM }
+# Vars for various scene states
+var disableP1Input: bool = true
+var disableP2Input: bool = true
+var P1ShipSelection: ShipSelectionDictionary = ShipSelectionDictionary.DEFAULT
+var P2ShipSelection: ShipSelectionDictionary = ShipSelectionDictionary.DEFAULT
+var isP1Selected: bool = false
+var isP2Selected: bool = false
 
 var P1SidePosition
 var P2SidePosition
