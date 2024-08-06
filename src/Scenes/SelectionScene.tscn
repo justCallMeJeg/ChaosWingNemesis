@@ -2863,6 +2863,81 @@ font_size = 48
 font = ExtResource("3_hx5ck")
 font_size = 20
 
+[sub_resource type="Animation" id="Animation_vs3se"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TopPlayerShipIndicator:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 180)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BottomPlayerShipIndicator:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 830)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TopPlayerShipIndicator:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BottomPlayerShipIndicator:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TopPlayerShipIndicator:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("BottomPlayerShipIndicator:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
 [sub_resource type="Animation" id="Animation_eobgm"]
 resource_name = "ShipSelectionSceneIntro"
 step = 0.0333333
@@ -2937,81 +3012,6 @@ tracks/5/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
-}
-
-[sub_resource type="Animation" id="Animation_vs3se"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TopPlayerShipIndicator:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 180)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("BottomPlayerShipIndicator:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 830)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("TopPlayerShipIndicator:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("BottomPlayerShipIndicator:modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("TopPlayerShipIndicator:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("BottomPlayerShipIndicator:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dnr2u"]
@@ -3475,7 +3475,7 @@ modulate = Color(1, 1, 1, 0.686275)
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 265.0
+offset_top = -265.0
 grow_horizontal = 2
 pivot_offset = Vector2(860, 402)
 
@@ -3504,14 +3504,15 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 265.0
-offset_bottom = 265.5
+offset_top = -265.0
+offset_bottom = -264.5
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture2D_n0ro0")
 
 [node name="CenterTextureContainer" type="VBoxContainer" parent="BGTextTexture"]
 visible = false
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
@@ -3545,7 +3546,6 @@ grow_vertical = 2
 texture = SubResource("GradientTexture2D_3fu27")
 
 [node name="CenterTextureTextShineGradient" type="TextureRect" parent="BGTextTexture/CenterTextureContainer/CenterTextureText"]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -3567,7 +3567,7 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -265.0
+offset_bottom = 265.0
 grow_horizontal = 2
 grow_vertical = 0
 pivot_offset = Vector2(860, -613)
@@ -3597,8 +3597,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -265.0
-offset_bottom = -264.999
+offset_top = 265.0
+offset_bottom = 265.001
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture2D_cmlcg")
@@ -3707,8 +3707,9 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.118
 anchor_bottom = 1.0
+offset_left = -85.0
 offset_top = 1280.0
-offset_right = 1195.04
+offset_right = 1110.04
 offset_bottom = 85.0
 rotation = -1.5708
 theme_override_styles/panel = SubResource("StyleBoxFlat_v536o")
@@ -3757,8 +3758,8 @@ anchors_preset = -1
 anchor_left = 0.883
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 84.24
-offset_right = 1279.96
+offset_left = 169.24
+offset_right = 1364.96
 offset_bottom = -1196.0
 grow_horizontal = 2
 rotation = 1.5708
@@ -3810,6 +3811,7 @@ grow_vertical = 2
 
 [node name="TopTooltipContainer" type="VBoxContainer" parent="TooltipUI"]
 visible = false
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -3833,6 +3835,7 @@ clip_text = true
 
 [node name="BottomTooltipContainer" type="VBoxContainer" parent="TooltipUI"]
 visible = false
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.956
@@ -3923,6 +3926,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.993217, 1.00329)
 
 [node name="P1Indicator" type="PanelContainer" parent="SideSelectionIndicator"]
 visible = false
@@ -4005,12 +4009,12 @@ offset_top = -460.0
 offset_bottom = -192.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 100
+theme_override_constants/separation = 50
 alignment = 1
 
 [node name="AccordionContainer" type="HBoxContainer" parent="ShipSelectionIndicator/TopPlayerShipIndicator"]
 layout_mode = 2
-theme_override_constants/separation = 250
+theme_override_constants/separation = 200
 alignment = 1
 
 [node name="LeftIndicator" type="Label" parent="ShipSelectionIndicator/TopPlayerShipIndicator/AccordionContainer"]
@@ -4020,7 +4024,7 @@ label_settings = SubResource("LabelSettings_f7boy")
 
 [node name="ShipSprite" type="Sprite2D" parent="ShipSelectionIndicator/TopPlayerShipIndicator/AccordionContainer"]
 position = Vector2(354, 50)
-scale = Vector2(7, 7)
+scale = Vector2(5, 5)
 texture = ExtResource("8_mqddq")
 
 [node name="RightIndicator" type="Label" parent="ShipSelectionIndicator/TopPlayerShipIndicator/AccordionContainer"]
@@ -4056,12 +4060,13 @@ offset_top = 190.0
 offset_bottom = 460.001
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 100
+scale = Vector2(1, 1.00561)
+theme_override_constants/separation = 50
 alignment = 1
 
 [node name="AccordionContainer" type="HBoxContainer" parent="ShipSelectionIndicator/BottomPlayerShipIndicator"]
 layout_mode = 2
-theme_override_constants/separation = 250
+theme_override_constants/separation = 200
 alignment = 1
 
 [node name="LeftIndicator" type="Label" parent="ShipSelectionIndicator/BottomPlayerShipIndicator/AccordionContainer"]
@@ -4071,7 +4076,7 @@ label_settings = SubResource("LabelSettings_f7boy")
 
 [node name="ShipSprite" type="Sprite2D" parent="ShipSelectionIndicator/BottomPlayerShipIndicator/AccordionContainer"]
 position = Vector2(354, 50)
-scale = Vector2(7, 7)
+scale = Vector2(5, 5)
 texture = ExtResource("8_mqddq")
 
 [node name="RightIndicator" type="Label" parent="ShipSelectionIndicator/BottomPlayerShipIndicator/AccordionContainer"]
@@ -4112,6 +4117,7 @@ stream = ExtResource("9_fgtpl")
 autoplay = true
 
 [node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
+max_polyphony = 10
 
 [connection signal="AnimationIntroFinished" from="." to="SideSelectionHandler" method="_on_selection_scene_animation_intro_finished"]
 [connection signal="SideSelectFinished" from="SideSelectionHandler" to="ShipSelectionHandler" method="_on_side_selection_handler_side_select_finished"]
