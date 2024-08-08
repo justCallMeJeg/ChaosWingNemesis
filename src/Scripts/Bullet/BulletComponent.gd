@@ -13,7 +13,7 @@ var zIndex : int
 func _ready():
 	global_position = instantiatePosition
 	global_rotation = instantiateRotation
-	z_index = zIndex
+	z_index = 9
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

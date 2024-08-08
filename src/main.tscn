@@ -10,8 +10,8 @@ script = ExtResource("1_5ohch")
 
 [node name="Teran" parent="." instance=ExtResource("2_j7qr7")]
 
+[node name="Border" parent="." instance=ExtResource("2_5vev1")]
+
 [node name="BaseShip" parent="." instance=ExtResource("1_67an6")]
 position = Vector2(341, 1070)
 scale = Vector2(5, 5)
-
-[node name="Border" parent="." instance=ExtResource("2_5vev1")]
