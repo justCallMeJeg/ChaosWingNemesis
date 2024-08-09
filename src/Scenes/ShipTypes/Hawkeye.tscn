@@ -43,19 +43,11 @@ animations = [{
 }]
 
 [node name="BaseShip2" instance=ExtResource("1_uj6ic")]
-collision_layer = 2
-collision_mask = 13
 
 [node name="ShipBody" parent="." index="1"]
 sprite_frames = SubResource("SpriteFrames_abra6")
 animation = &"center"
 autoplay = "center"
-
-[node name="HealthComponent" parent="." index="4"]
-HEALTH = null
-
-[node name="ShootingComponent" parent="." index="5"]
-BULLET_SCENE = "LaserBullet"
 
 [node name="UniqueComponentTest" type="Node" parent="." index="6"]
 

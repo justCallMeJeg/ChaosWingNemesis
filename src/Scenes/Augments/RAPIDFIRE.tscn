@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b65cx8udqnvus"]
+
+[ext_resource type="Script" path="res://src/Scripts/Augments/RAPIDFIRE.gd" id="1_6bgvj"]
+
+[node name="Rapidfire" type="Node"]
+script = ExtResource("1_6bgvj")
