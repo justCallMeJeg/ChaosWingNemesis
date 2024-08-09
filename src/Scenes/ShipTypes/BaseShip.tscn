@@ -365,9 +365,10 @@ script = ExtResource("4_7juyf")
 MOVE_COMPONENT = NodePath("../MoveComponent")
 SPEED = 500
 
-[node name="HealthComponent" type="Node" parent="." node_paths=PackedStringArray("HITBOX_COMPONENT")]
+[node name="HealthComponent" type="Node" parent="." node_paths=PackedStringArray("HITBOX_COMPONENT", "CollisionPolygon")]
 script = ExtResource("6_xmu10")
 HITBOX_COMPONENT = NodePath("../HitboxComponent")
+CollisionPolygon = NodePath("../HitboxComponent/CollisionPolygon2D")
 
 [node name="ShootingComponent" type="Node" parent="." node_paths=PackedStringArray("ACTOR")]
 script = ExtResource("6_2agsu")
