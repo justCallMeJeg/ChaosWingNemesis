@@ -1,6 +1,7 @@
 extends Node
 
 @export var HITBOX_COMPONENT: Area2D
+
 @export var HEALTH: int = 3
 @export var CollisionPolygon : CollisionPolygon2D
 
@@ -10,6 +11,7 @@ signal healthChanged()
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -24,7 +26,7 @@ func _process(delta):
 	
 	if HEALTH <= 0:
 		healthDepleted.emit()
-		get_parent().queue_free()
+		get_parent().queue_free()#dead
 
 
 
