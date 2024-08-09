@@ -2,7 +2,7 @@ class_name HealthComponent
 extends Node
 
 @export var HITBOX_COMPONENT: Area2D
-
+@export var HP_BAR: Control
 @export var HEALTH: int = 3
 @export var CollisionPolygon : CollisionPolygon2D
 
@@ -20,6 +20,7 @@ func _process(delta):
 	var hurt = HITBOX_COMPONENT.get_overlapping_bodies()
 	if hurt.size() > 0:
 		HEALTH -= 1 * hurt.size() * delta 
+		HP_BAR.get_node("ProgressBar").value = HEALTH
 		print(HEALTH)
 		CollisionPolygon.set_deferred("disabled",true)
 		await get_tree().create_timer(3).timeout
