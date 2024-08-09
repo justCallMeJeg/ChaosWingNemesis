@@ -74,6 +74,8 @@ var P2SidePosition: SideSelectionPosition
 var P1Indicator
 var P2Indicator
 
+signal ShipSelectionFinished(P1ShipSelection, P2ShipSelection)
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	print("ShipSelectionHandler ready!")
@@ -82,8 +84,8 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed:
 		if get_parent().CurrentSceneStage == SelectionStages.ShipSelect:
 			handleShipSelection(event)
-			#if isP1Selected and isP2Selected:
-				#stageTransitionHandler()
+			if isP1Selected and isP2Selected:
+				stageTransitionHandler()
 
 func _on_side_selection_handler_side_select_finished(_P1SidePosition, _P2SidePosition):
 	P1SidePosition = _P1SidePosition
@@ -164,10 +166,10 @@ func shipSelectionInputHandler(indicator: Control, sidePosition: SideSelectionPo
 	return shipSelection
 
 # Plays a sound with a random pitch scale
-func playSound(sound: AudioStream, min_pitch: float = 0.000, max_pitch: float = 0.000) -> void:
+func playSound(sound: AudioStream, min_pitch: int = 0, max_pitch: int = 0) -> void:
 	sfxPlayer.stream = sound
 	if min_pitch > 0 and max_pitch > 0:
-		sfxPlayer.pitch_scale = RandomNumberGenerator.new().randf_range(min_pitch, max_pitch)
+		sfxPlayer.pitch_scale = RandomNumberGenerator.new().randi_range(min_pitch, max_pitch)
 	sfxPlayer.play()
 
 func pressAnim(indicator: Control, dir: int) -> void:
@@ -216,7 +218,7 @@ func P2SelectedHandler() -> void:
 func updateTooltipAndPlaySound(selectionState: SideSelectionPosition, waitingText: String) -> void:
 	var selectedSide = topTooltip if selectionState == SideSelectionPosition.TOP else bottomTooltip
 	selectedSide.text = waitingText
-	playSound(CONFIRM_SFX, 1.0, 1.5)
+	playSound(CONFIRM_SFX, 0, 1)
 
 func shipSelectedIndicatorHandler(sidePosition: SideSelectionPosition) -> bool:
 	var tween = create_tween().set_parallel(true).set_trans(Tween.TRANS_CUBIC)
@@ -237,3 +239,13 @@ func hideChoiceIndicator(indicator: Control) -> void:
 	var tween: Tween = create_tween().set_trans(Tween.TRANS_CUBIC).set_parallel(true)
 	tween.tween_property(indicator.get_child(0), "modulate", Color("#ffffff00"), 0.1137).from_current()
 	tween.tween_property(indicator.get_child(2), "modulate", Color("#ffffff00"), 0.1137).from_current()
+
+func stageTransitionHandler() -> void:
+	var tween: Tween = create_tween().set_trans(Tween.TRANS_CUBIC).set_parallel(true)
+	tween.tween_property(playerReadyIndicatorParent.get_child(0), "modulate", Color("#ffffff"), 1).from_current()
+	tween.tween_property(playerReadyIndicatorParent.get_child(1), "modulate", Color("#ffffff"), 1).from_current()
+	await tween.finished
+	playerReadyIndicatorParent.get_child(0).visible = false
+	playerReadyIndicatorParent.get_child(1).visible = false
+	get_parent().CurrentSceneStage = SelectionStages.SceneSelect
+	ShipSelectionFinished.emit(P1CurrentShipSelection, P2CurrentShipSelection)
