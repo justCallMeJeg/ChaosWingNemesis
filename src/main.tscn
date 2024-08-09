@@ -15,3 +15,5 @@ script = ExtResource("1_5ohch")
 [node name="BaseShip" parent="." instance=ExtResource("1_67an6")]
 position = Vector2(341, 1070)
 scale = Vector2(5, 5)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
