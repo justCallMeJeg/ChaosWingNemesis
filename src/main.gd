@@ -62,11 +62,11 @@ func playerSetup() -> void:
 	if GameManager.P1SelectedSide == 0:
 		P1Ship.position = Vector2(DEFAULT_X_POS, Y_TopPLayer_POS)
 		P2Ship.position = Vector2(DEFAULT_X_POS, Y_BottomPLayer_POS)
-		P1Ship.rotation = P2Ship.rotation+180
+		P1Ship.rotation = P2Ship.rotation + 1 * PI
 	else: 
 		P1Ship.position = Vector2(DEFAULT_X_POS, Y_BottomPLayer_POS)
 		P2Ship.position = Vector2(DEFAULT_X_POS, Y_TopPLayer_POS)
-		P2Ship.rotation = P2Ship.rotation+180
+		P2Ship.rotation = P2Ship.rotation + 1 * PI
 	
 	print(GameManager.P1SelectedSide)
 	print(GameManager.P2SelectedSide)

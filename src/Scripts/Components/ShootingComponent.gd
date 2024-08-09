@@ -10,7 +10,7 @@ var BULLET_SIZE : float = 0.0 #You can change this value to change bullet size
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	await get_tree().create_timer(3).timeout 
+	await get_tree().create_timer(5).timeout 
 	shoot()
 	#pass
 
