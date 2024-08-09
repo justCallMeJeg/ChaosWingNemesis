@@ -5,7 +5,7 @@ extends Node
 @onready var PROJECTILE = load("res://src/Scenes/BulletTypes/"+BULLET_SCENE+".tscn")
 
 @export var ACTOR : Node2D
-
+var BULLET_SIZE : float = 0.0 #You can change this value to change bullet size
 
 
 # Called when the node enters the scene tree for the first time.
@@ -22,6 +22,7 @@ func shoot():
 	instance.dir = ACTOR.rotation
 	instance.instantiatePosition = ACTOR.global_position
 	instance.instantiateRotation = ACTOR.rotation
+	instance.get_node("BulletBody").scale += Vector2(BULLET_SIZE,BULLET_SIZE)#This line changes bullet size
 	instance.zIndex = ACTOR.z_index - 1
 	main.add_child.call_deferred(instance)
 	
