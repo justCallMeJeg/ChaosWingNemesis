@@ -1,4 +1,4 @@
-[gd_scene load_steps=108 format=3 uid="uid://dk7damr8src5q"]
+[gd_scene load_steps=107 format=3 uid="uid://dk7damr8src5q"]
 
 [ext_resource type="Script" path="res://src/Scripts/Scenes/SelectionScene/SelectionScene.gd" id="1_l0odl"]
 [ext_resource type="Script" path="res://src/Scripts/Scenes/SelectionScene/SideSelectionHandler.gd" id="2_2sa0v"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://b4d6uxo51020t" path="res://src/Assets/UI/BGShineTexture.png" id="3_afoh0"]
 [ext_resource type="Script" path="res://src/Scripts/Scenes/SelectionScene/ShipSelectionHandler.gd" id="3_en565"]
 [ext_resource type="FontFile" uid="uid://qu863qgm5b8q" path="res://src/Assets/UI/PublicPixel-E447g.ttf" id="3_hx5ck"]
-[ext_resource type="Script" path="res://src/Scripts/Scenes/SelectionScene/SceneSelectionHandler.gd" id="4_qlunh"]
 [ext_resource type="Texture2D" uid="uid://em3rqasccrun" path="res://src/Assets/UI/SpaceshipIcons/HAWKEYE_UI.png" id="8_mqddq"]
 [ext_resource type="AudioStream" uid="uid://c2pm2qmyhaui1" path="res://src/Assets/Sound/BG/SelectionScene.ogg" id="9_fgtpl"]
 
@@ -3308,7 +3307,6 @@ script = ExtResource("2_2sa0v")
 script = ExtResource("3_en565")
 
 [node name="SceneSelectionHandler" type="Node" parent="."]
-script = ExtResource("4_qlunh")
 
 [node name="SceneTransition" type="CanvasLayer" parent="."]
 visible = false
