@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c87ffhq2v4g3g"]
+
+[ext_resource type="Script" path="res://src/Scripts/Augments/GIGGA.gd" id="1_k12ig"]
+
+[node name="Gigga" type="Node"]
+script = ExtResource("1_k12ig")

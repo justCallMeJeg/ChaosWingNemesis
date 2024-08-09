@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dy8d06efpfs7y"]
+
+[ext_resource type="Script" path="res://src/Scripts/Augments/SMOL.gd" id="1_ufiwx"]
+
+[node name="Smol" type="Node"]
+script = ExtResource("1_ufiwx")
