@@ -1,19 +1,14 @@
-extends CanvasLayer
+extends ColorRect
 
-@onready var rect = $ColorRect
 @onready var anim = $AnimationPlayer
 
-func _ready():
-	rect.visible = false
+func _ready() -> void:
+	# Plays the animation backward to fade in
+	anim.play_backwards("fade")
 
-func loadScene(scene: String) -> void:
-	anim.play("Fade")
-	await anim.animation_finished()
-	get_tree().change_scene_to_file(scene)
-	anim.play_backwards("Fade")
-
-func reloadScene() -> void: 
-	anim.play("Fade")
-	await anim.animation_finished()
-	get_tree().reload_current_scene()
-	anim.play_backwards("Fade")
+func loadScene(_next_scene: StringName) -> void:
+	# Plays the Fade animation and wait until it finishes
+	anim.play("fade")
+	await anim.animation_finished
+	# Changes the scene
+	get_tree().change_scene_to_file(_next_scene)
