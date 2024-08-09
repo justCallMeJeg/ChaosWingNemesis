@@ -49,9 +49,6 @@ sprite_frames = SubResource("SpriteFrames_abra6")
 animation = &"center"
 autoplay = "center"
 
-[node name="HealthComponent" parent="." index="4"]
-HEALTH = 3
-
 [node name="UniqueComponentTest" type="Node" parent="." index="6"]
 
 [node name="CollisionPolygon2D" parent="HitboxComponent" index="0"]

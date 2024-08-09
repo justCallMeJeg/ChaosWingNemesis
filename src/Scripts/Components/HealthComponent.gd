@@ -23,7 +23,7 @@ func _process(delta):
 		HP_BAR.get_node("ProgressBar").value = HEALTH
 		print(HEALTH)
 		CollisionPolygon.set_deferred("disabled",true)
-		await get_tree().create_timer(3).timeout
+		await get_tree().create_timer(1).timeout #I-frames in seconds
 		CollisionPolygon.set_deferred("disabled",false)
 	
 	if HEALTH <= 0:
