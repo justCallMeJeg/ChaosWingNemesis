@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://c8rp2pvakxqyu"]
+[gd_scene load_steps=54 format=3 uid="uid://c8rp2pvakxqyu"]
 
 [ext_resource type="Script" path="res://src/Scripts/Player/BaseShip.gd" id="1_bfdr7"]
 [ext_resource type="Texture2D" uid="uid://c4k50mccjt7c0" path="res://src/Assets/Player/SHIP_TRAIL.png" id="2_ys52p"]
@@ -7,6 +7,8 @@
 [ext_resource type="Script" path="res://src/Scripts/Components/ShootingComponent.gd" id="6_2agsu"]
 [ext_resource type="Script" path="res://src/Scripts/Components/HealthComponent.gd" id="6_xmu10"]
 [ext_resource type="PackedScene" uid="uid://balm6uq6duiot" path="res://src/Scenes/Augments/FUELED.tscn" id="7_pghpk"]
+[ext_resource type="PackedScene" uid="uid://dy8d06efpfs7y" path="res://src/Scenes/Augments/SMOL.tscn" id="7_v0wmg"]
+[ext_resource type="PackedScene" uid="uid://bqy5iajnuyufp" path="res://src/Scenes/Augments/Upgraded.tscn" id="8_dcw6d"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_552c3"]
 atlas = ExtResource("2_ys52p")
@@ -368,6 +370,7 @@ SPEED = 500
 
 [node name="HealthComponent" type="Node" parent="." node_paths=PackedStringArray("HITBOX_COMPONENT", "CollisionPolygon")]
 script = ExtResource("6_xmu10")
+HEALTH = null
 HITBOX_COMPONENT = NodePath("../HitboxComponent")
 CollisionPolygon = NodePath("../HitboxComponent/CollisionPolygon2D")
 
@@ -379,6 +382,10 @@ ACTOR = NodePath("..")
 [node name="AugmentSlot" type="Node" parent="."]
 
 [node name="Fueled" parent="AugmentSlot" instance=ExtResource("7_pghpk")]
+
+[node name="Upgraded" parent="AugmentSlot" instance=ExtResource("8_dcw6d")]
+
+[node name="Smol" parent="AugmentSlot" instance=ExtResource("7_v0wmg")]
 
 [node name="BulletInterval" type="Timer" parent="."]
 wait_time = 0.05

@@ -51,6 +51,9 @@ sprite_frames = SubResource("SpriteFrames_abra6")
 animation = &"center"
 autoplay = "center"
 
+[node name="HealthComponent" parent="." index="4"]
+HEALTH = null
+
 [node name="ShootingComponent" parent="." index="5"]
 BULLET_SCENE = "LaserBullet"
 
