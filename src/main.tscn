@@ -3,12 +3,12 @@
 [ext_resource type="Script" path="res://src/main.gd" id="1_5ohch"]
 [ext_resource type="PackedScene" uid="uid://cwtnw5we3hvc4" path="res://src/Scenes/ShipTypes/Hawkeye.tscn" id="1_67an6"]
 [ext_resource type="PackedScene" uid="uid://dwa50coqb36yq" path="res://src/Scenes/Border.tscn" id="2_5vev1"]
-[ext_resource type="PackedScene" uid="uid://d3njdpbbgmrcg" path="res://src/Scenes/GameBG/Teran.tscn" id="2_j7qr7"]
+[ext_resource type="PackedScene" uid="uid://71cjmfeudwiu" path="res://src/Scenes/GameScenes/Horizon.tscn" id="2_fpinv"]
 
 [node name="Main" type="CanvasLayer"]
 script = ExtResource("1_5ohch")
 
-[node name="Teran" parent="." instance=ExtResource("2_j7qr7")]
+[node name="Horizon" parent="." instance=ExtResource("2_fpinv")]
 
 [node name="Border" parent="." instance=ExtResource("2_5vev1")]
 
