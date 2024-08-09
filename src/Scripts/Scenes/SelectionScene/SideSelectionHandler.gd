@@ -224,6 +224,8 @@ func stageTransitionHandler() -> void:
 	TopSelectedIndicator.visible = false
 	BottomSelectedIndicator.visible = false
 	get_parent().CurrentSceneStage = SelectionStages.ShipSelect
+	GameManager.P1SelectedSide = P1SidePosition
+	GameManager.P2SelectedSide = P2SidePosition
 	SideSelectFinished.emit(P1SidePosition, P2SidePosition)
 
 func _on_selection_scene_animation_intro_finished():

@@ -244,8 +244,9 @@ func stageTransitionHandler() -> void:
 	var tween: Tween = create_tween().set_trans(Tween.TRANS_CUBIC).set_parallel(true)
 	tween.tween_property(playerReadyIndicatorParent.get_child(0), "modulate", Color("#ffffff"), 1).from_current()
 	tween.tween_property(playerReadyIndicatorParent.get_child(1), "modulate", Color("#ffffff"), 1).from_current()
+	GameManager.P1SelectedShip = P1CurrentShipSelection
+	GameManager.P2SelectedShip = P2CurrentShipSelection
+	SceneTransition.loadScene("res://src/main.tscn")
 	await tween.finished
 	playerReadyIndicatorParent.get_child(0).visible = false
 	playerReadyIndicatorParent.get_child(1).visible = false
-	get_parent().CurrentSceneStage = SelectionStages.SceneSelect
-	ShipSelectionFinished.emit(P1CurrentShipSelection, P2CurrentShipSelection)
