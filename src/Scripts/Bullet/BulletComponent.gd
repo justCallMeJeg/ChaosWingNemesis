@@ -8,7 +8,7 @@ var dir : float
 var instantiatePosition : Vector2
 var instantiateRotation : float
 var zIndex : int
-
+var deviationAngle = PI*0.5
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	global_position = instantiatePosition

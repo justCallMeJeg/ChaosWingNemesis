@@ -32,6 +32,11 @@ const HORIZON = preload("res://src/Scenes/GameScenes/Horizon.tscn")
 const HORIZON_MUSIC = preload("res://src/Assets/Sound/BG/HORIZON.ogg")
 const TERAN_MUSIC = preload("res://src/Assets/Sound/BG/TERAN.ogg")
 
+var SMOL = preload("res://src/Scenes/Augments/SMOL.tscn").instantiate()
+var FUELED = preload("res://src/Scenes/Augments/FUELED.tscn").instantiate()
+var GIGGA =  preload("res://src/Scenes/Augments/GIGGA.tscn").instantiate()
+var RAPIDFIRE = preload("res://src/Scenes/Augments/RAPIDFIRE.tscn").instantiate()
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var instance
@@ -70,12 +75,14 @@ func playerSetup() -> void:
 	#P1Ship.get_child(3).set("MOVE_COMPONENT", P1Ship.get_child(2)) 
 	P1Ship.set_collision_mask(5)
 	P1Ship.get_child(3).set("SPEED", 500) 
-	P1Ship.get_child(3).set("player_ID", "1") 
+	P1Ship.get_child(3).set("player_ID", "1")
 	P1Ship.set_collision_layer(2)
 	P1Ship.get_child(5).set("Collision_Mask", 69)#BulletMask
 	P1Ship.get_child(5).set("Collision_Layer", 8)#BulletLayer
 	P1Ship.get_child(9).set_collision_mask(16)
 	P1Ship.get_child(9).set_collision_layer(32)
+	#adding augments
+	#P1Ship.get_child(6).add_child(SMOL)
 	
 	#P2Ship.get_child(3).set_script("res://src/Scripts/Components/P2InputComponent.gd")
 	#P2Ship.get_child(3).set("MOVE_COMPONENT", P2Ship.get_child(2)) 
@@ -87,6 +94,9 @@ func playerSetup() -> void:
 	P2Ship.get_child(5).set("Collision_Mask", 35)#BulletMask
 	P2Ship.get_child(9).set_collision_mask(8)
 	P2Ship.get_child(9).set_collision_layer(64)
+	#adding augments
+	#P2Ship.get_child(6).add_child(RAPIDFIRE)
+	
 	
 	add_child(P1Ship)
 	add_child(P2Ship)
