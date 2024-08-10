@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dwa50coqb36yq"]
 
-[node name="Border" type="Node2D"]
+[node name="Border" type="Node2D" groups=["Border"]]
 metadata/_edit_vertical_guides_ = [715.0, 5.0, 0.0]
 metadata/_edit_horizontal_guides_ = [1280.0, 5.0, 0.0, 1275.0]
 
