@@ -1,9 +1,8 @@
-[gd_scene load_steps=52 format=3 uid="uid://c8rp2pvakxqyu"]
+[gd_scene load_steps=51 format=3 uid="uid://c8rp2pvakxqyu"]
 
 [ext_resource type="Script" path="res://src/Scripts/Player/BaseShip.gd" id="1_bfdr7"]
 [ext_resource type="Texture2D" uid="uid://c4k50mccjt7c0" path="res://src/Assets/Player/SHIP_TRAIL.png" id="2_ys52p"]
 [ext_resource type="Script" path="res://src/Scripts/Components/MoveComponent.gd" id="3_21ajj"]
-[ext_resource type="Script" path="res://src/Scripts/Components/InputComponent.gd" id="4_7juyf"]
 [ext_resource type="Script" path="res://src/Scripts/Components/ShootingComponent.gd" id="6_2agsu"]
 [ext_resource type="Script" path="res://src/Scripts/Components/HealthComponent.gd" id="6_xmu10"]
 [ext_resource type="PackedScene" uid="uid://bhitgkdiblqri" path="res://src/Scenes/HealthBar.tscn" id="7_bsbs6"]
@@ -341,8 +340,7 @@ height = 16.0
 
 [node name="BaseShip" type="CharacterBody2D"]
 scale = Vector2(5, 5)
-collision_layer = 2
-collision_mask = 13
+collision_layer = 0
 motion_mode = 1
 platform_floor_layers = 4294967040
 script = ExtResource("1_bfdr7")
@@ -362,10 +360,7 @@ scale = Vector2(0.5, 0.5)
 script = ExtResource("3_21ajj")
 ACTOR = NodePath("..")
 
-[node name="InputComponent" type="Node" parent="." node_paths=PackedStringArray("MOVE_COMPONENT")]
-script = ExtResource("4_7juyf")
-MOVE_COMPONENT = NodePath("../MoveComponent")
-SPEED = 500
+[node name="InputComponent" type="Node" parent="."]
 
 [node name="HealthComponent" type="Node" parent="." node_paths=PackedStringArray("HITBOX_COMPONENT", "HP_BAR", "CollisionPolygon")]
 script = ExtResource("6_xmu10")

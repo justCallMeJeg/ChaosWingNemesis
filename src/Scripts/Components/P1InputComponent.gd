@@ -1,7 +1,7 @@
 class_name P1InputComponent
 extends Node
 
-@export var MOVE_COMPONENT: MoveComponent
+@onready var MOVE_COMPONENT : MoveComponent = $"/root/Main/BaseShip/MoveComponent"
 @export var SPEED: int = 100
 
 func _input(event: InputEvent) -> void:
