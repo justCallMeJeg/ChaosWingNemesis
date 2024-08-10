@@ -11,3 +11,8 @@ var P2SelectedSide: int = playerSides.DEFAULT
 var P1SelectedShip: int = availableShips.RAZOR
 var P2SelectedShip: int = availableShips.RAZOR
 var selectedScene: int = availableScenes.HORIZON
+
+var roundStart: bool = false
+
+var P1Wins: int = 0
+var P2Wins: int = 0

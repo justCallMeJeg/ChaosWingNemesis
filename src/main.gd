@@ -14,6 +14,9 @@ const Y_BottomPLayer_POS: int = 1020
 var P1SidePos: int
 var P2SidePos: int
 
+var P1Ship
+var P2Ship
+
 var availableShips: Array[PackedScene] = [
 	preload("res://src/Scenes/ShipTypes/Razor.tscn"),
 	preload("res://src/Scenes/ShipTypes/Juggernaut.tscn"),
@@ -45,10 +48,18 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed:
 		if event.keycode == KEY_R: # REMOVE THIS BEFORE RELEASE
 			get_tree().reload_current_scene() # REMOVE THIS BEFORE RELEASE
+		elif event.keycode == KEY_ESCAPE: # REMOVE THIS BEFORE RELEASE
+			SceneTransition.loadScene("res://src/Scenes/MainMenu.tscn")
+
+func _process(delta) -> void:
+	if not is_instance_valid(P1Ship):
+		print("P1 Dead")
+	if not is_instance_valid(P2Ship):
+		print("P2 Dead")
 
 func playerSetup() -> void:
-	var P1Ship = availableShips[GameManager.P1SelectedShip].instantiate()
-	var P2Ship = availableShips[GameManager.P2SelectedShip].instantiate()
+	P1Ship = availableShips[GameManager.P1SelectedShip].instantiate()
+	P2Ship = availableShips[GameManager.P2SelectedShip].instantiate()
 	#P1Ship.get_child(3).set_script("res://src/Scripts/Components/P1InputComponent.gd")
 	#P1Ship.get_child(3).set("MOVE_COMPONENT", P1Ship.get_child(2)) 
 	P1Ship.set_collision_mask(5)
@@ -83,8 +94,3 @@ func playerSetup() -> void:
 		P1Ship.position = Vector2(DEFAULT_X_POS, Y_BottomPLayer_POS)
 		P2Ship.position = Vector2(DEFAULT_X_POS, Y_TopPLayer_POS)
 		P2Ship.rotation = P2Ship.rotation + 1 * PI
-	
-	print(GameManager.P1SelectedSide)
-	print(GameManager.P2SelectedSide)
-	print(GameManager.P1SelectedShip)
-	print(GameManager.P2SelectedShip)
