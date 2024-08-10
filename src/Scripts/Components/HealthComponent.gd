@@ -27,3 +27,9 @@ func _process(delta):
 
 
 
+
+
+func _on_hitbox_component_body_entered(hitbox):
+	self.HEALTH -= 1
+	HP_BAR.get_node("ProgressBar").value = HEALTH
+	print(HEALTH)
