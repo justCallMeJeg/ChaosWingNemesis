@@ -21,7 +21,8 @@ func _physics_process(delta: float) -> void:
 	velocity = Vector2(0, -BulletSpeed).rotated(dir)
 	move_and_slide()
 
-func _on_area_2d_body_entered(_body):
-	_body.get_node("HealthComponent").HEALTH -= 1
-	_body.get_child(10).get_node("ProgressBar").value = _body.get_node("HealthComponent").HEALTH
+func _on_area_2d_body_entered(_body: Node2D):
+	if _body.has_node("HealthComponent"):
+		_body.get_node("HealthComponent").HEALTH -= 1
+		_body.get_child(10).get_node("ProgressBar").value = _body.get_node("HealthComponent").HEALTH
 	queue_free()#despawns when hitting a wall or an enemy
