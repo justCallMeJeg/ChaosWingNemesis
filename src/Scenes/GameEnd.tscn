@@ -1,8 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://chfyidhq7pbgu"]
+[gd_scene load_steps=13 format=3 uid="uid://chfyidhq7pbgu"]
 
 [ext_resource type="Script" path="res://src/Scripts/Scenes/GameEnd.gd" id="1_s1xuc"]
 [ext_resource type="FontFile" uid="uid://qu863qgm5b8q" path="res://src/Assets/UI/PublicPixel-E447g.ttf" id="2_3l7l3"]
 [ext_resource type="Texture2D" uid="uid://b5wtwj1agw51s" path="res://src/Assets/BG/star.png" id="3_2ceb2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_d5rr7"]
+font = ExtResource("2_3l7l3")
+font_size = 15
 
 [sub_resource type="LabelSettings" id="LabelSettings_hn2ge"]
 font = ExtResource("2_3l7l3")
@@ -87,6 +91,23 @@ offset_right = -120.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 15.0
+grow_horizontal = 2
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Label3" type="Label" parent="MarginContainer"]
+self_modulate = Color(1, 1, 1, 0.588235)
+layout_mode = 2
+text = "PRESS [ESC] TO SKIP"
+label_settings = SubResource("LabelSettings_d5rr7")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Label" type="Label" parent="."]
 self_modulate = Color(1, 1, 1, 0.196078)
