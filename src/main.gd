@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 @onready var audioPlayer: AudioStreamPlayer = $AudioStreamPlayer
+@onready var label = $Label
 
 const CONSTRUCTOR = preload("res://src/Scenes/ShipTypes/Constructor.tscn")
 const JUGGERNAUT = preload("res://src/Scenes/ShipTypes/Juggernaut.tscn")
@@ -16,6 +17,8 @@ var P2SidePos: int
 
 var P1Ship
 var P2Ship
+
+var gameEnd: bool = false
 
 var availableShips: Array[PackedScene] = [
 	preload("res://src/Scenes/ShipTypes/Razor.tscn"),
@@ -52,10 +55,13 @@ func _input(event: InputEvent) -> void:
 			SceneTransition.loadScene("res://src/Scenes/MainMenu.tscn")
 
 func _process(delta) -> void:
-	if not is_instance_valid(P1Ship):
-		print("P1 Dead")
-	if not is_instance_valid(P2Ship):
-		print("P2 Dead")
+	if not gameEnd:
+		if not is_instance_valid(P1Ship):
+			gameEnd = true
+			p2win()
+		if not is_instance_valid(P2Ship):
+			gameEnd = true
+			p1win()
 
 func playerSetup() -> void:
 	P1Ship = availableShips[GameManager.P1SelectedShip].instantiate()
@@ -94,3 +100,15 @@ func playerSetup() -> void:
 		P1Ship.position = Vector2(DEFAULT_X_POS, Y_BottomPLayer_POS)
 		P2Ship.position = Vector2(DEFAULT_X_POS, Y_TopPLayer_POS)
 		P2Ship.rotation = P2Ship.rotation + 1 * PI
+
+func p1win() -> void:
+	label.text = "Player 1 WINS!"
+	label.visible = true
+	await get_tree().create_timer(3).timeout
+	SceneTransition.loadScene("res://src/Scenes/GameEnd.tscn")
+
+func p2win() -> void:
+	label.text = "Player 2 WINS!"
+	label.visible = true
+	await get_tree().create_timer(3).timeout
+	SceneTransition.loadScene("res://src/Scenes/GameEnd.tscn")

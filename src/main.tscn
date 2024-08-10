@@ -1,11 +1,31 @@
-[gd_scene load_steps=3 format=3 uid="uid://dknla64h5gqo0"]
+[gd_scene load_steps=5 format=3 uid="uid://dknla64h5gqo0"]
 
 [ext_resource type="Script" path="res://src/main.gd" id="1_5ohch"]
 [ext_resource type="PackedScene" uid="uid://dwa50coqb36yq" path="res://src/Scenes/Border.tscn" id="2_5vev1"]
+[ext_resource type="FontFile" uid="uid://qu863qgm5b8q" path="res://src/Assets/UI/PublicPixel-E447g.ttf" id="3_iwmca"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tgcsx"]
+font = ExtResource("3_iwmca")
+font_size = 30
 
 [node name="Main" type="CanvasLayer"]
 script = ExtResource("1_5ohch")
 
 [node name="Border" parent="." instance=ExtResource("2_5vev1")]
+
+[node name="Label" type="Label" parent="."]
+visible = false
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "WINNER ANNOUNCE"
+label_settings = SubResource("LabelSettings_tgcsx")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
