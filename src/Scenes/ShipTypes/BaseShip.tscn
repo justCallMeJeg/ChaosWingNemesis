@@ -395,4 +395,3 @@ offset_right = -9.0
 offset_bottom = 15.8
 
 [connection signal="timeout" from="BulletInterval" to="ShootingComponent" method="_on_bullet_interval_timeout"]
-[connection signal="body_entered" from="HitboxComponent" to="HealthComponent" method="_on_hitbox_component_body_entered"]

@@ -22,6 +22,15 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func _on_area_2d_body_entered(_body):
-	_body.get_node("HealthComponent").HEALTH -= 1
-	_body.get_child(10).get_node("ProgressBar").value = _body.get_node("HealthComponent").HEALTH
+	if _body.is_in_group("Border"):
+		print("do nothing")
+	else:
+		if _body.has_node("HealthComponent"):
+			if _body.get_node("HealthComponent").HEALTH == 1:
+				_body.queue_free()
+			else:
+				_body.get_node("HealthComponent").HEALTH -= 1
+				_body.get_child(10).get_node("ProgressBar").value = _body.get_node("HealthComponent").HEALTH
+		
+	
 	queue_free()#despawns when hitting a wall or an enemy
