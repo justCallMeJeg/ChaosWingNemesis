@@ -1,19 +1,14 @@
 class_name HealthComponent
 extends Node
 
-@export var HITBOX_COMPONENT: Area2D
+@onready var HITBOX_COMPONENT: Area2D = $"/root/Main/BaseShip/HitboxComponent"
 @export var HP_BAR: Control
 @export var HEALTH: int = 3
-@export var CollisionPolygon : CollisionPolygon2D
+@onready var CollisionPolygon : CollisionPolygon2D = $"/root/Main/BaseShip/HitboxComponent/CollisionPolygon2D"
 
 # Node Signals for external functions/components
 signal healthDepleted()
 signal healthChanged()
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -31,5 +26,4 @@ func _process(delta):
 		get_parent().queue_free()#dead
 
 
-func _on_hitbox_component_body_entered(body):
-	print("ouch")
+
