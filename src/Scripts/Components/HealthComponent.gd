@@ -31,4 +31,5 @@ func _process(delta):
 		get_parent().queue_free()#dead
 
 
-
+func _on_hitbox_component_body_entered(body):
+	print("ouch")

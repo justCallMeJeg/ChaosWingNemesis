@@ -127,8 +127,10 @@ P2Down={
 2d_physics/layer_1="Wall"
 2d_physics/layer_2="Player 1"
 2d_physics/layer_3="Player 2"
-2d_physics/layer_4="Bullet 1"
-2d_physics/layer_5="Bullet 2"
+2d_physics/layer_4="P1Bullet"
+2d_physics/layer_5="P2Bullet"
+2d_physics/layer_6="P1Hitbox"
+2d_physics/layer_7="P2Hitbox"
 
 [rendering]
 

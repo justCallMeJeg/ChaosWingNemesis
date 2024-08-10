@@ -22,4 +22,5 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func _on_area_2d_body_entered(_body):
+	#print("hit")
 	queue_free()#despawns when hitting a wall or an enemy

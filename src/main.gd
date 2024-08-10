@@ -53,13 +53,20 @@ func playerSetup() -> void:
 	P1Ship.get_child(3).set("MOVE_COMPONENT", P1Ship.get_child(2)) 
 	P1Ship.get_child(3).set("SPEED", 500) 
 	P1Ship.set_collision_layer(2)
-	P1Ship.get_child(5).set("Collision_Mask", 4)
+	P1Ship.get_child(5).set("Collision_Mask", 69)#BulletMask
+	P1Ship.get_child(5).set("Collision_Layer", 8)#BulletLayer
+	P1Ship.get_child(9).set_collision_mask(16)
+	P1Ship.get_child(9).set_collision_layer(32)
 	
 	P2Ship.get_child(3).set_script("res://src/Scripts/Components/P2InputComponent.gd")
 	P2Ship.get_child(3).set("MOVE_COMPONENT", P2Ship.get_child(2)) 
 	P2Ship.get_child(3).set("SPEED", 500) 
 	P2Ship.set_collision_layer(4)
-	P2Ship.get_child(5).set("Collision_Mask", 2)
+	P2Ship.get_child(5).set("Collision_Layer", 16)#BulletLayer
+	P2Ship.get_child(5).set("Collision_Mask", 35)#BulletMask
+	P2Ship.get_child(9).set_collision_mask(8)
+	P2Ship.get_child(9).set_collision_layer(64)
+	
 	add_child(P1Ship)
 	add_child(P2Ship)
 	move_child(P1Ship, 3)
