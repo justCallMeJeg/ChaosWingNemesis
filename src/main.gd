@@ -49,18 +49,22 @@ func _input(event: InputEvent) -> void:
 func playerSetup() -> void:
 	var P1Ship = availableShips[GameManager.P1SelectedShip].instantiate()
 	var P2Ship = availableShips[GameManager.P2SelectedShip].instantiate()
-	P1Ship.get_child(3).set_script("res://src/Scripts/Components/P1InputComponent.gd")
-	P1Ship.get_child(3).set("MOVE_COMPONENT", P1Ship.get_child(2)) 
+	#P1Ship.get_child(3).set_script("res://src/Scripts/Components/P1InputComponent.gd")
+	#P1Ship.get_child(3).set("MOVE_COMPONENT", P1Ship.get_child(2)) 
+	P1Ship.set_collision_mask(5)
 	P1Ship.get_child(3).set("SPEED", 500) 
+	P1Ship.get_child(3).set("player_ID", "1") 
 	P1Ship.set_collision_layer(2)
 	P1Ship.get_child(5).set("Collision_Mask", 69)#BulletMask
 	P1Ship.get_child(5).set("Collision_Layer", 8)#BulletLayer
 	P1Ship.get_child(9).set_collision_mask(16)
 	P1Ship.get_child(9).set_collision_layer(32)
 	
-	P2Ship.get_child(3).set_script("res://src/Scripts/Components/P2InputComponent.gd")
-	P2Ship.get_child(3).set("MOVE_COMPONENT", P2Ship.get_child(2)) 
-	P2Ship.get_child(3).set("SPEED", 500) 
+	#P2Ship.get_child(3).set_script("res://src/Scripts/Components/P2InputComponent.gd")
+	#P2Ship.get_child(3).set("MOVE_COMPONENT", P2Ship.get_child(2)) 
+	P2Ship.set_collision_mask(3)
+	P2Ship.get_child(3).set("SPEED", 500)
+	P2Ship.get_child(3).set("player_ID", "2")  
 	P2Ship.set_collision_layer(4)
 	P2Ship.get_child(5).set("Collision_Layer", 16)#BulletLayer
 	P2Ship.get_child(5).set("Collision_Mask", 35)#BulletMask

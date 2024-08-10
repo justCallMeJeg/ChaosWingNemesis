@@ -43,7 +43,6 @@ animations = [{
 }]
 
 [node name="BaseShip" instance=ExtResource("1_qes1a")]
-collision_layer = 0
 
 [node name="ShipBody" parent="." index="1"]
 sprite_frames = SubResource("SpriteFrames_2wct7")
