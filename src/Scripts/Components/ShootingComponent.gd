@@ -8,7 +8,7 @@ extends Node
 var BULLET_SIZE : float = 0.0 #You can change this value to change bullet size
 var Collision_Mask : int = 0
 var Collision_Layer : int = 0
-var BulletSpread : bool = true
+var BulletSpread : bool = false
 var instance = {}
 var bulletvariation = [0, -0.1, 0.1]
 # Called when the node enters the scene tree for the first time.
