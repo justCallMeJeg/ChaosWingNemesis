@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://4t2w033ehfi6"]
+[gd_scene load_steps=7 format=3 uid="uid://4t2w033ehfi6"]
 
 [ext_resource type="PackedScene" uid="uid://c8rp2pvakxqyu" path="res://src/Scenes/ShipTypes/BaseShip.tscn" id="1_6v8jn"]
 [ext_resource type="Texture2D" uid="uid://mop5gpi2ngdj" path="res://src/Assets/Player/Ships/JUGGERNAUT_SHIP_SPRITE.png" id="2_pobwn"]
-[ext_resource type="PackedScene" uid="uid://c87ffhq2v4g3g" path="res://src/Scenes/Augments/GIGGA.tscn" id="3_y7t6j"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kovuy"]
 atlas = ExtResource("2_pobwn")
@@ -49,8 +48,6 @@ animations = [{
 sprite_frames = SubResource("SpriteFrames_b3ua8")
 animation = &"center"
 autoplay = "center"
-
-[node name="Gigga" parent="AugmentSlot" index="0" instance=ExtResource("3_y7t6j")]
 
 [node name="CollisionPolygon2D" parent="HitboxComponent" index="0"]
 position = Vector2(-1, 0)

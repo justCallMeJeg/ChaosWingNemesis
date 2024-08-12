@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://c0xmpg4go2vyl"]
+[gd_scene load_steps=7 format=3 uid="uid://c0xmpg4go2vyl"]
 
 [ext_resource type="PackedScene" uid="uid://c8rp2pvakxqyu" path="res://src/Scenes/ShipTypes/BaseShip.tscn" id="1_qes1a"]
 [ext_resource type="Texture2D" uid="uid://staskvsqd4hs" path="res://src/Assets/Player/Ships/CONSTRUCTOR_SHIP_SPRITE.png" id="2_vali0"]
-[ext_resource type="PackedScene" uid="uid://bqy5iajnuyufp" path="res://src/Scenes/Augments/Upgraded.tscn" id="3_4p1bj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_blrhh"]
 atlas = ExtResource("2_vali0")
@@ -49,8 +48,6 @@ animations = [{
 sprite_frames = SubResource("SpriteFrames_2wct7")
 animation = &"center"
 autoplay = "center"
-
-[node name="Upgraded" parent="AugmentSlot" index="0" instance=ExtResource("3_4p1bj")]
 
 [node name="CollisionPolygon2D" parent="HitboxComponent" index="0"]
 polygon = PackedVector2Array(-1, -4, -1, -8, 1, -8, 1, -4, 3, -4, 3, -3, 4, -3, 4, -1, 5, -1, 5, -3, 7, -3, 7, 0, 8, 0, 8, 3, 6, 3, 3, 3, 3, 6, 2, 6, 2, 7, 1, 7, 1, 8, -1, 8, -1, 7, -2, 7, -2, 6, -3, 6, -3, 3, -8, 3, -8, 0, -7, 0, -7, -3, -5, -3, -5, -1, -4, -1, -4, -3, -3, -3, -3, -4)

@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://bedwkfcverj5n"]
+[gd_scene load_steps=7 format=3 uid="uid://bedwkfcverj5n"]
 
 [ext_resource type="PackedScene" uid="uid://c8rp2pvakxqyu" path="res://src/Scenes/ShipTypes/BaseShip.tscn" id="1_nhe6b"]
 [ext_resource type="Texture2D" uid="uid://cb65cacwttkn4" path="res://src/Assets/Player/Ships/PHANTOM_SHIP_SPRITE.png" id="2_sydmj"]
-[ext_resource type="PackedScene" uid="uid://dy8d06efpfs7y" path="res://src/Scenes/Augments/SMOL.tscn" id="3_tpnjf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0e1s8"]
 atlas = ExtResource("2_sydmj")
@@ -49,8 +48,6 @@ animations = [{
 sprite_frames = SubResource("SpriteFrames_uwnls")
 animation = &"center"
 autoplay = "center"
-
-[node name="Smol" parent="AugmentSlot" index="0" instance=ExtResource("3_tpnjf")]
 
 [node name="CollisionPolygon2D" parent="HitboxComponent" index="0"]
 polygon = PackedVector2Array(-6, -2, -6, -7, -4, -7, -4, -2, -2, -2, -1, -2, -1, -6, 1, -6, 1, -2, 4, -2, 4, -7, 6, -7, 6, 0, 8, 0, 8, 3, 2, 3, 2, 5, 4, 5, 4, 6, -4, 6, -4, 5, -2, 5, -2, 3, -8, 3, -8, 0, -6, 0)

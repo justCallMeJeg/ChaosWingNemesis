@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://27e0167okjdd"]
+
+[ext_resource type="Script" path="res://src/Scripts/Augments/TripleShot.gd" id="1_11gyc"]
+
+[node name="TripleShot" type="Node"]
+script = ExtResource("1_11gyc")

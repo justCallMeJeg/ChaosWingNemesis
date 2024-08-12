@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://b8vqc0op5yvin"]
+[gd_scene load_steps=7 format=3 uid="uid://b8vqc0op5yvin"]
 
 [ext_resource type="PackedScene" uid="uid://c8rp2pvakxqyu" path="res://src/Scenes/ShipTypes/BaseShip.tscn" id="1_dmkn7"]
 [ext_resource type="Texture2D" uid="uid://drwagfl2ij6ef" path="res://src/Assets/Player/Ships/RAZOR_SHIP_SPRITE.png" id="2_fj3f7"]
-[ext_resource type="PackedScene" uid="uid://b65cx8udqnvus" path="res://src/Scenes/Augments/RAPIDFIRE.tscn" id="3_7w80v"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vihl2"]
 atlas = ExtResource("2_fj3f7")
@@ -49,8 +48,6 @@ animations = [{
 sprite_frames = SubResource("SpriteFrames_qfd1x")
 animation = &"center"
 autoplay = "center"
-
-[node name="Rapidfire" parent="AugmentSlot" index="0" instance=ExtResource("3_7w80v")]
 
 [node name="CollisionPolygon2D" parent="HitboxComponent" index="0"]
 polygon = PackedVector2Array(-3, -2, -3, -4, -1, -4, -1, -7, 1, -7, 1, -4, 3, -4, 3, -2, 5, -2, 5, -1, 7, -1, 7, 0, 8, 0, 8, 3, 3, 3, 3, 4, 3, 6, -3, 6, -3, 3, -8, 3, -8, 0, -7, 0, -7, -1, -5, -1, -5, -2)
