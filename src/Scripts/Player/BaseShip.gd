@@ -3,46 +3,57 @@ extends CharacterBody2D
 @onready var MOVE_COMPONENT: MoveComponent = $MoveComponent as MoveComponent
 @onready var SHIP_BODY: AnimatedSprite2D = $ShipBody
 @onready var SHIP_TRAIL: AnimatedSprite2D = $ShipFlame
-
-
+var player_ID : String
+var SPEED = 100
 func _ready():
 	# Initialization code if needed
 	pass
 
-func _process(delta):
-	animate_the_ship()
-	move_and_slide()#this method detects collision and prevents the player from clipping through the wall
-
-
-func animate_the_ship() -> void:
-	var velocity = MOVE_COMPONENT.VELOCITY
+func _physics_process(delta):
+	var input_velocity = Vector2.ZERO
 	
-	if velocity.x == 0 and velocity.y == 0:
+	if Input.is_action_pressed("P"+player_ID+"Left"):
+		input_velocity.x = -1
+	if Input.is_action_pressed("P"+player_ID+"Right"):
+		input_velocity.x = 1
+	if Input.is_action_pressed("P"+player_ID+"Up"):
+		input_velocity.y = -1
+	if Input.is_action_pressed("P"+player_ID+"Down"):
+		input_velocity.y = 1
+	
+	position += input_velocity * SPEED * delta
+	move_and_slide()
+	animate_the_ship(input_velocity)
+	#move_and_slide()#this method detects collision and prevents the player from clipping through the wall
+
+#Imma copy this to input component
+func animate_the_ship(input_velocity) -> void:
+	if input_velocity.x == 0 and input_velocity.y == 0:
 		SHIP_BODY.play("center")
 		SHIP_TRAIL.play("forwardCenter")
-	elif velocity.x == 0:
+	elif input_velocity.x == 0:
 		SHIP_BODY.play("center")
-		if velocity.y < 0:
+		if input_velocity.y < 0:
 			SHIP_TRAIL.play("forwardCenter")
 		else:
 			SHIP_TRAIL.play("backwardsCenter")
-	elif velocity.y == 0:
-		if velocity.x < 0:
+	elif input_velocity.y == 0:
+		if input_velocity.x < 0:
 			SHIP_BODY.play("bank_left")
 			SHIP_TRAIL.play("forwardLeft")
 		else:
 			SHIP_BODY.play("bank_right")
 			SHIP_TRAIL.play("forwardRight")
 	else:
-		if velocity.x < 0:
+		if input_velocity.x < 0:
 			SHIP_BODY.play("bank_left")
-			if velocity.y < 0:
+			if input_velocity.y < 0:
 				SHIP_TRAIL.play("forwardLeft")
 			else:
 				SHIP_TRAIL.play("backwardsLeft")
 		else:
 			SHIP_BODY.play("bank_right")
-			if velocity.y < 0:
+			if input_velocity.y < 0:
 				SHIP_TRAIL.play("forwardRight")
 			else:
 				SHIP_TRAIL.play("backwardsRight")

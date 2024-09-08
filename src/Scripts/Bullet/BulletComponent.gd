@@ -8,7 +8,7 @@ var dir : float
 var instantiatePosition : Vector2
 var instantiateRotation : float
 var zIndex : int
-var deviationAngle = PI*0.5
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	global_position = instantiatePosition
@@ -27,10 +27,11 @@ func _on_area_2d_body_entered(_body):
 	else:
 		if _body.has_node("HealthComponent"):
 			if _body.get_node("HealthComponent").HEALTH == 1:
+				_body.get_node("HealthComponent").HP_Refresh()
 				_body.queue_free()
 			else:
 				_body.get_node("HealthComponent").HEALTH -= 1
-				_body.get_child(10).get_node("ProgressBar").value = _body.get_node("HealthComponent").HEALTH
+				_body.get_node("HealthComponent").HP_Refresh()
 		
 	
 	queue_free()#despawns when hitting a wall or an enemy
