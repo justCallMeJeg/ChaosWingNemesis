@@ -5,7 +5,7 @@ extends CharacterBody2D
 @onready var SHIP_TRAIL: AnimatedSprite2D = $ShipFlame
 var player_ID : String
 @export var ShipType : String
-var SPEED = 100
+var SPEED = 150
 func _ready():
 	# Initialization code if needed
 	pass
