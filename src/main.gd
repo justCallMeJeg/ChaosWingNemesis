@@ -1,4 +1,5 @@
 extends CanvasLayer
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 @onready var audioPlayer: AudioStreamPlayer = $AudioStreamPlayer
 @onready var label = $Label
@@ -53,6 +54,7 @@ func _ready():
 	add_child(instance)
 	move_child(instance, 1)
 	playerSetup()
+	animation_player.play("intro")
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed:
@@ -127,11 +129,11 @@ func playerSetup() -> void:
 	match P2Ship.ShipType:
 		"Constructor":
 			P2Ship.get_child(5).set("BulletClass", "BulletSpread")
-			P2Ship.get_child(7).set("wait_time", 0.5)
+			P2Ship.get_child(7).set("wait_time", 0.8)
 			P2Ship.get_child(5).set("BULLET_SCENE", "Bullet")
 		"Juggernaut":
 			P2Ship.get_child(5).set("BulletClass", "BulletBarrage")
-			P2Ship.get_child(7).set("wait_time", 1)
+			P2Ship.get_child(7).set("wait_time", 0.2)
 			P2Ship.get_child(5).set("BULLET_SCENE", "Bullet")
 		"Hawkeye":
 			print("Do nothing")
@@ -139,7 +141,7 @@ func playerSetup() -> void:
 			P2Ship.get_child(5).set("BULLET_SCENE", "Bullet")
 		"Phantom":
 			P2Ship.get_child(5).set("BulletClass", "SniperBullet")
-			P2Ship.get_child(7).set("wait_time", 1.5)
+			P2Ship.get_child(7).set("wait_time", 1)
 			P2Ship.get_child(5).set("BULLET_SCENE", "LaserBullet")
 		"Razor":
 			P2Ship.get_child(5).set("BulletClass", "TripleBullet")
@@ -161,12 +163,14 @@ func playerSetup() -> void:
 
 func p1win() -> void:
 	label.text = "Player 1 WINS!"
+	label.modulate = Color("#FFFFFF")
 	label.visible = true
 	await get_tree().create_timer(3).timeout
 	SceneTransition.loadScene("res://src/Scenes/GameEnd.tscn")
 
 func p2win() -> void:
 	label.text = "Player 2 WINS!"
+	label.modulate = Color("#FFFFFF")
 	label.visible = true
 	await get_tree().create_timer(3).timeout
 	SceneTransition.loadScene("res://src/Scenes/GameEnd.tscn")

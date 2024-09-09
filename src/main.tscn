@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dknla64h5gqo0"]
+[gd_scene load_steps=8 format=3 uid="uid://dknla64h5gqo0"]
 
 [ext_resource type="Script" path="res://src/main.gd" id="1_5ohch"]
 [ext_resource type="PackedScene" uid="uid://dwa50coqb36yq" path="res://src/Scenes/Border.tscn" id="2_5vev1"]
@@ -8,13 +8,73 @@
 font = ExtResource("3_iwmca")
 font_size = 30
 
+[sub_resource type="Animation" id="Animation_t0i3i"]
+resource_name = "intro"
+length = 5.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": ["GAME START IN...", "3", "2", "1", "GO!"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.966667, 1.96667, 2, 2.96667, 3, 3.96667, 4, 5.5),
+"transitions": PackedFloat32Array(1.5, 1, 1.5, 1, 1.5, 1, 1.5, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.196078), Color(1, 1, 1, 1), Color(1, 1, 1, 0.196078), Color(1, 1, 1, 1), Color(1, 1, 1, 0.196078), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ts0cv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["WINNER ANNOUNCE"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6nrlb"]
+_data = {
+"RESET": SubResource("Animation_ts0cv"),
+"intro": SubResource("Animation_t0i3i")
+}
+
 [node name="Main" type="CanvasLayer"]
 script = ExtResource("1_5ohch")
 
 [node name="Border" parent="." instance=ExtResource("2_5vev1")]
 
 [node name="Label" type="Label" parent="."]
-visible = false
 anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
@@ -29,3 +89,8 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6nrlb")
+}
