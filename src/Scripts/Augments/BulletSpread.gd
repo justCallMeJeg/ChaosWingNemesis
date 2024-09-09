@@ -4,7 +4,5 @@ extends Node
 @onready var PLAYER_NAME : String = self.get_parent().get_parent().name
 func _ready():
 	var SHOOTING_COMPONENT : ShootingComponent = main.get_node(PLAYER_NAME).get_child(5)
-	SHOOTING_COMPONENT.BulletClass = "tripleBullet"
-	SHOOTING_COMPONENT.BULLET_SCENE = "LaserBullet"
-	print("tripleBullet")
+	SHOOTING_COMPONENT.BulletClass = "bulletSpread"
 

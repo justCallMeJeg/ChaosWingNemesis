@@ -3,7 +3,7 @@ extends Node
 
 @onready var HITBOX_COMPONENT: Area2D = $"/root/Main/BaseShip/HitboxComponent"
 @export var HP_BAR: Control
-@export var MAX_HEALTH : int = 3
+@export var MAX_HEALTH : float = 100.0
 @export var HEALTH: int
 @onready var CollisionPolygon : CollisionPolygon2D = $"/root/Main/BaseShip/HitboxComponent/CollisionPolygon2D"
 

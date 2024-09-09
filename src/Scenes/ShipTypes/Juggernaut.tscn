@@ -43,11 +43,18 @@ animations = [{
 }]
 
 [node name="BaseShip" instance=ExtResource("1_6v8jn")]
+ShipType = "Juggernaut"
 
 [node name="ShipBody" parent="." index="1"]
 sprite_frames = SubResource("SpriteFrames_b3ua8")
 animation = &"center"
 autoplay = "center"
+
+[node name="HealthComponent" parent="." index="4"]
+MAX_HEALTH = 150.0
+
+[node name="BulletInterval" parent="." index="7"]
+wait_time = 1.0
 
 [node name="CollisionPolygon2D" parent="HitboxComponent" index="0"]
 position = Vector2(-1, 0)

@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var SHIP_BODY: AnimatedSprite2D = $ShipBody
 @onready var SHIP_TRAIL: AnimatedSprite2D = $ShipFlame
 var player_ID : String
+@export var ShipType : String
 var SPEED = 100
 func _ready():
 	# Initialization code if needed
@@ -22,11 +23,11 @@ func _physics_process(delta):
 		input_velocity.y = 1
 	
 	position += input_velocity * SPEED * delta
-	move_and_slide()
+	move_and_slide()#this method detects collision and prevents the player from clipping through the wall
 	animate_the_ship(input_velocity)
-	#move_and_slide()#this method detects collision and prevents the player from clipping through the wall
+	
 
-#Imma copy this to input component
+
 func animate_the_ship(input_velocity) -> void:
 	if input_velocity.x == 0 and input_velocity.y == 0:
 		SHIP_BODY.play("center")

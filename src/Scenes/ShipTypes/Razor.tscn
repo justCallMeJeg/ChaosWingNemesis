@@ -43,11 +43,15 @@ animations = [{
 }]
 
 [node name="BaseShip" instance=ExtResource("1_dmkn7")]
+ShipType = "Razor"
 
 [node name="ShipBody" parent="." index="1"]
 sprite_frames = SubResource("SpriteFrames_qfd1x")
 animation = &"center"
 autoplay = "center"
+
+[node name="HealthComponent" parent="." index="4"]
+MAX_HEALTH = 85.0
 
 [node name="CollisionPolygon2D" parent="HitboxComponent" index="0"]
 polygon = PackedVector2Array(-3, -2, -3, -4, -1, -4, -1, -7, 1, -7, 1, -4, 3, -4, 3, -2, 5, -2, 5, -1, 7, -1, 7, 0, 8, 0, 8, 3, 3, 3, 3, 4, 3, 6, -3, 6, -3, 3, -8, 3, -8, 0, -7, 0, -7, -1, -5, -1, -5, -2)

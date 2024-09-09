@@ -42,7 +42,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="BaseShip2" instance=ExtResource("1_uj6ic")]
+[node name="BaseShip" instance=ExtResource("1_uj6ic")]
+ShipType = "Hawkeye"
 
 [node name="ShipBody" parent="." index="1"]
 sprite_frames = SubResource("SpriteFrames_abra6")

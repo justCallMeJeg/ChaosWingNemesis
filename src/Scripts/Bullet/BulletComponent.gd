@@ -2,7 +2,7 @@ class_name BulletComponent
 extends CharacterBody2D
 
 @export var BulletSpeed : float 
-
+var BulletDamage = 10.0
 
 var dir : float
 var instantiatePosition : Vector2
@@ -26,12 +26,11 @@ func _on_area_2d_body_entered(_body):
 		print("do nothing")
 	else:
 		if _body.has_node("HealthComponent"):
-			if _body.get_node("HealthComponent").HEALTH == 1:
-				_body.get_node("HealthComponent").HP_Refresh()
+			if _body.get_node("HealthComponent").HEALTH <= 1.0:
 				_body.queue_free()
 			else:
-				_body.get_node("HealthComponent").HEALTH -= 1
-				_body.get_node("HealthComponent").HP_Refresh()
+				_body.get_node("HealthComponent").HEALTH -= BulletDamage
+			_body.get_node("HealthComponent").HP_Refresh()
 		
 	
 	queue_free()#despawns when hitting a wall or an enemy

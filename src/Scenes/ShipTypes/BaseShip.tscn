@@ -340,11 +340,13 @@ radius = 2.8
 height = 11.2
 
 [node name="BaseShip" type="CharacterBody2D"]
+z_index = 9
 scale = Vector2(5, 5)
 collision_layer = 0
 motion_mode = 1
 platform_floor_layers = 4294967040
 script = ExtResource("1_bfdr7")
+ShipType = "Base"
 
 [node name="ShipFlame" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 12)
@@ -368,16 +370,17 @@ script = ExtResource("4_7juyf")
 script = ExtResource("6_xmu10")
 HP_BAR = NodePath("../HealthBar")
 
-[node name="ShootingComponent" type="Node" parent="." node_paths=PackedStringArray("ACTOR")]
+[node name="ShootingComponent" type="Node" parent="." node_paths=PackedStringArray("ACTOR", "TIMER")]
 script = ExtResource("6_2agsu")
-BULLET_SCENE = "Bullet"
 ACTOR = NodePath("..")
+TIMER = NodePath("../BulletInterval")
 
 [node name="AugmentSlot" type="Node" parent="."]
 
+[node name="Slot 1" type="Node" parent="AugmentSlot"]
+
 [node name="BulletInterval" type="Timer" parent="."]
 wait_time = 0.5
-autostart = true
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_wa812")
