@@ -15,7 +15,7 @@ var bulletvariation = [0, -0.1, 0.1]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(4).timeout
 	TIMER.start()
 	TIMER.set_autostart(true)
 	
